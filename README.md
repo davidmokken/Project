@@ -26,6 +26,11 @@ Providing proper and easy to understand visualisations about crimerates, migrant
 *Sketch*
 
 ***Main Features***
+**Map of the Netherlands**
+
+
+
+
 
 *Minimum Viable Product*
 
