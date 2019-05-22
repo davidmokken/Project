@@ -36,8 +36,8 @@ __Prerequisites__
 ---
 
 *Data sources*
-- __[Volksgezondheidszorg](https://www.volksgezondheidenzorg.info/onderwerp/dementie/regionaal-internationaal/regionaal)__ - Mortality rates per GGD-region.
-- __[Statlines](https://opendata.cbs.nl/statline/#/CBS/nl/dataset/83102NED/table?ts=1558540301270)__ - Asylum seekers in the Netherlands.
+- __[StatLine](https://opendata.cbs.nl/statline/#/CBS/nl/dataset/82249NED/table?ts=1558540015099)__ - Social contacts and participation in Society.
+- __[StatLine](https://opendata.cbs.nl/statline/#/CBS/nl/dataset/83102NED/table?ts=1558540301270)__ - Asylum seekers in the Netherlands 2013-2018
 - __[Volksgezondheidszorg](https://www.volksgezondheidenzorg.info/onderwerp/dementie/cijfers-context/huidige-situatie#node-prevalentie-naar-leeftijd)__- Prevalence by age (men vs women) of dementia.
 - __[Volksgezondheidszorg](https://www.volksgezondheidenzorg.info/onderwerp/levensverwachting/cijfers-context/huidige-situatie#node-levensverwachting-op-65-jaar-naar-opleiding)__- Life expectancy rates by education level.
 - __[Statlines](https://opendata.cbs.nl/statline/#/CBS/nl/dataset/83710NED/table?ts=1558456481790)__ - Data for migration backgrounds and dementia rates.
