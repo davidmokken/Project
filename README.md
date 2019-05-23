@@ -23,10 +23,13 @@ This in combination with lack of knowledge of the actual numbers of crime, asylu
 ---
 Providing proper and easy to understand visualisations about crimerates, migrants and ethnicity might change people's perceptions about migrants and asylum seekers. We all might just get along after all.
 
+
+**Map of the Netherlands**
 *Sketch*
 
 ***Main Features***
-**Map of the Netherlands**
+
+
 
 
 
