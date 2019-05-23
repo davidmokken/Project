@@ -32,7 +32,6 @@ The map of Netherlands will display several different datasets.
 *Sketch*
 
 *Main Features*
-
 1. When mouse moved over, the amount of data is shown (at start the amount of immigrants)
 1. When clicked on a province, a next page is shown (directs to the province page, depends on dataset currently viewing which page of province is shown)
 1. Dropdown to select year
@@ -41,7 +40,6 @@ The map of Netherlands will display several different datasets.
 1 . Link/Button to crime in the Netherlands page and when clicked on province when total crime amount is showing also redirect to crime page
 
 *Datasets used:*
-
 - Immigrants per province (dropdown)
 - Safety feeling per province (dropdown)
 - Amount of crimes
@@ -52,10 +50,6 @@ The map of Netherlands will display several different datasets.
 
 *Optional Implementation*
 
-1. First item
-1. Second item
-1. Third item
-1. Fourth item
 
 ---
 
@@ -64,7 +58,6 @@ The map of Netherlands will display several different datasets.
 All provinces of The Netherlands will have a seperate info page
 
 *Main Features*
-
 1. Barchart to display all the different kinds of migration backgrounds (migration dataset)
 1. Pie chart that will display relative percentage of migrants that have one parent born outside of the Netherlands (migration dataset)
 1. Large number to show grade for safety (safety dataset)
@@ -74,10 +67,13 @@ All provinces of The Netherlands will have a seperate info page
 1. Bar chart to show different kind of crimes (crime dataset
 
 *Datasets used:*
-
 - Immigrants per province (dropdown)
 - Safety feeling per province (dropdown)
-- Amount of crimes
+- Amount of crimes (dropdown)
+
+*Minimum Viable Product*
+1. Color scale to display difference
+2. English page
 
 ---
 
@@ -88,13 +84,16 @@ Page for crime in The Netherlands
 *Main Features*
 1. Line Chart to show decrease in suspects with lines being seperate background
 1. Pie chart to show percentage of background of suspects
-1. Bar chart showing the sev
+1. Bar chart showing the different crimes
 
 *Datasets used:*
-
-- Suspects
+- Suspects (dropdown)
 - Safety feeling per province (dropdown)
-- Amount of crimes
+- Amount of crimes (dropdown)
+
+*Minimum Viable Product*
+1. Color scale to display difference
+2. English page
 
 ---
 
@@ -104,9 +103,17 @@ Page containing Asylum Seekers and Volunteerwork by Migrants in The Netherlands
 
 *Main Features*
 1. Pie Chart to show background percentage of the people who do informal work
-1. Pie of Volunteerwork
+1. Pie Chart of percentage of people doing volunteerwork
 1. Barchart of what the volunteerwork is
 1. Linechart of Asylum seekers per year with people from several countries as lines
+
+*Datasets used:*
+- Social contacts and participation
+- Asylum seekers in the Netherlands 2013-2018
+
+*Minimum Viable Product*
+1. Color scale to display difference
+2. English page
 
 ---
 
@@ -123,8 +130,10 @@ __Prerequisites__
 
 *External components*
 - D3-tip
+- Mapping
 
 *Related Visualizations*
 - 
 *Hardest part*
 - Linking the data map, in my case the Netherlands, to different pages for the provinces.
+- Creating a format will be essential. If I correctly format the page, it will be much easier to link all the different data to the different pages
