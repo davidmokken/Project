@@ -23,6 +23,7 @@ This in combination with lack of knowledge of the actual numbers of crime, asylu
 ---
 Providing proper and easy to understand visualisations about crimerates, migrants and ethnicity might change people's perceptions about migrants and asylum seekers. We all might just get along after all.
 
+---
 
 **Map of the Netherlands**
 
@@ -56,6 +57,8 @@ The map of Netherlands will display several different datasets.
 1. Third item
 1. Fourth item
 
+---
+
 **Page for province**
 
 All provinces of The Netherlands will have a seperate info page
@@ -76,6 +79,8 @@ All provinces of The Netherlands will have a seperate info page
 - Safety feeling per province (dropdown)
 - Amount of crimes
 
+---
+
 **Page for province**
 
 Page for crime in The Netherlands
@@ -91,6 +96,8 @@ Page for crime in The Netherlands
 - Safety feeling per province (dropdown)
 - Amount of crimes
 
+---
+
 **Page for Asylum Seekers and Volunteerwork**
 
 Page containing Asylum Seekers and Volunteerwork by Migrants in The Netherlands
@@ -100,6 +107,8 @@ Page containing Asylum Seekers and Volunteerwork by Migrants in The Netherlands
 1. Pie of Volunteerwork
 1. Barchart of what the volunteerwork is
 1. Linechart of Asylum seekers per year with people from several countries as lines
+
+---
 
 __Prerequisites__
 ---
