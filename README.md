@@ -25,12 +25,23 @@ Providing proper and easy to understand visualisations about crimerates, migrant
 
 
 **Map of the Netherlands**
+
+The map of Netherlands will display several different datasets. 
+
 *Sketch*
 
-***Main Features***
+*Main Features*
 
+1. When mouse moved over, the amount of immigrants is shown
+1. Colors scale
+1. When clicked on a province, a next page is shown
+1. Dropdown to select year
+1. Dropdown to select different data
 
+*Datasets used:*
 
+- Immigrants per province 
+- 
 
 
 
@@ -43,6 +54,20 @@ Providing proper and easy to understand visualisations about crimerates, migrant
 1. Second item
 1. Third item
 1. Fourth item
+
+**Page for province**
+
+All provinces of the Netherlands will have a seperate info page
+
+*Main Features*
+
+1. Barchart to display all the different kinds of migration backgrounds
+1. Pie chart that will display relative percentage of migrants that have one parent born outside of the Netherlands
+1. Second item
+1. Third item
+1. Fourth item
+
+
 
 __Prerequisites__
 ---
