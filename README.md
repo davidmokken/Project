@@ -2,9 +2,9 @@
 
 ---
 
-##### ***Name***:             David Mokken
-##### ***Course***:           Minor Programming
-##### ***Student number***:   10770798
+##### ***Name***: David Mokken
+##### ***Course***: Minor Programming
+##### ***Student number***: 10770798
 
 ---
 
