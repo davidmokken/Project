@@ -53,7 +53,7 @@ The map of Netherlands will display several different datasets.
 
 ---
 
-**Page for province**
+**Pages for province**
 
 All provinces of The Netherlands will have a seperate info page
 
@@ -77,7 +77,7 @@ All provinces of The Netherlands will have a seperate info page
 
 ---
 
-**Page for province**
+**Page for Crime**
 
 Page for crime in The Netherlands
 
