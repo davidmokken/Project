@@ -24,11 +24,21 @@ With the help of this design I will show that I have everything necessary to com
 - __[StatLine](https://opendata.cbs.nl/statline/#/CBS/nl/dataset/82249NED/table?ts=1558540015099)__ - Social contacts and participation in Society.
 - __[StatLine](https://opendata.cbs.nl/statline/#/CBS/nl/dataset/83102NED/table?ts=1558540301270)__ - Asylum seekers in the Netherlands 2013-2018
 
-
+The datasets in the four main datasets will be converted into json files. Out of these files the information will be stored in pandas multi-index dataframes. With the provinces will be the first index and the seperate years will be the second index. This multi-index data framework will provide a challenge to work with as we have never worked with them before, a welcome challenge however. 
 
 ***__Technical Components__***
 ---
+The technical components for this project will be:
+1. Bar charts
+*We have already worked with bar charts but I must figure out how to properly link chart to several datasets*
+1. (interactive) Pie charts
+*I have already worked with a piechart but I must figure out how to properly link chart to several datasets*
+1. A worldmap (chart)
+*The main frame for the worldmap will be used from the final homework assignment for data processing. However, this framework must be linked to several different datasets*
+1. Liquid fill gauge charts
+*The d3 blocks site provides a framework for several liquid fill gauge charts but they must be linked to the several datasets*
 
 ***__API's & D3__***
 ---
+The D3 plugins that will be used are the worldmap plugin and the liquid fill javascript file.
 
