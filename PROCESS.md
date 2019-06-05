@@ -10,3 +10,5 @@
 
 # Day 1:
 
+Plan: Write converters for the datasets (which are currently in csv format).
+
