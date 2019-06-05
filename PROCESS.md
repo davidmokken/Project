@@ -12,3 +12,10 @@
 
 Plan: Write converters for the datasets (which are currently in csv format).
 
+
+Feedback sessie:
+Received feedback:
+Maybe too ambitious
+Try first finish the three visualisations then do more
+
+
