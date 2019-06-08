@@ -18,3 +18,6 @@ The feedback I received were mainly directed at the amount of work I planned to 
 The group suggested to adjust my bare minimum to contain three visualisations.
 
 
+# Day 2:
+
+Finished converting all data. Made a quick html page but that is the last step for me. Started with the data map but I still have trouble with combining it with the dropdown
