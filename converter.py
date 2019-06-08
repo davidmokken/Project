@@ -17,8 +17,17 @@ def convert_immigration(filename):
     data = pd.read_csv(filename, sep=';')
    
     # Renames the column names
-    data.columns = ['Year', 'Province', 'Total number with MB', 'Western', 'Marrocan', 'Dutch Antillies', 'Surinam', 'Turkey', 'Other', 'Dutch (relative)', 'Total Migration Background (relative)', 'Western (relative)', 'Non-Western (relative)']
+    data.columns = ['Year', 'Province', 'Total number with MB', 'Western', 'Marrocan', \
+    'Dutch Antillies', 'Surinam', 'Turkey', 'Other', 'Dutch (relative)', \
+    'Total Migration Background (relative)', 'Western (relative)', 'Non-Western (relative)']
     
+    # Transforms strings to floats
+    data['Year'] = pd.to_numeric(data['Year'], errors='coerce')
+    data['Dutch (relative)'] = pd.to_numeric(data['Dutch (relative)'].str.replace(',', '.'), errors='coerce')
+    data['Total Migration Background (relative)'] = pd.to_numeric(data['Total Migration Background (relative)'].str.replace(',', '.'), errors='coerce')
+    data['Western (relative)'] = pd.to_numeric(data['Western (relative)'].str.replace(',', '.'), errors='coerce')
+    data['Non-Western (relative)'] = pd.to_numeric(data['Non-Western (relative)'].str.replace(',', '.'), errors='coerce')
+
     # Replaces values in the province columns
     data = data.replace("Groningen (PV)", "Groningen")
     data = data.replace("Friesland (PV)", "Friesland")
@@ -51,10 +60,20 @@ def convert_safety(filename):
     # Renames the column names
     data.columns = ['Marges', 'Year', 'Province', 'Feels Unsafe (general)', 'Feels unsafe (neighbourhood)', \
         'Belief a lot of crime (neighbourhood)', 'Crime increased (neighbourhood)', 'Crime decreases (neighbourhood)', \
-        'No change in crime (neighbourhood', 'Grade for safety (neighbourhood)']
+        'No change in crime (neighbourhood)', 'Grade for safety (neighbourhood)']
 
     # Drops the column 'Marges'
     data = data.drop(columns=['Marges'])
+
+    # Transforms strings to floats
+    data['Year'] = pd.to_numeric(data['Year'], errors='coerce')
+    data['Feels Unsafe (general)'] = pd.to_numeric(data['Feels Unsafe (general)'].str.replace(',', '.'), errors='coerce')
+    data['Feels unsafe (neighbourhood)'] = pd.to_numeric(data['Feels unsafe (neighbourhood)'].str.replace(',', '.'), errors='coerce')
+    data['Belief a lot of crime (neighbourhood)'] = pd.to_numeric(data['Belief a lot of crime (neighbourhood)'].str.replace(',', '.'), errors='coerce')
+    data['Crime increased (neighbourhood)'] = pd.to_numeric(data['Crime increased (neighbourhood)'].str.replace(',', '.'), errors='coerce')
+    data['Crime decreases (neighbourhood)'] = pd.to_numeric(data['Crime decreases (neighbourhood)'].str.replace(',', '.'), errors='coerce')
+    data['No change in crime (neighbourhood)'] = pd.to_numeric(data['No change in crime (neighbourhood)'].str.replace(',', '.'), errors='coerce')
+    data['Grade for safety (neighbourhood)'] = pd.to_numeric(data['Grade for safety (neighbourhood)'].str.replace(',', '.'), errors='coerce')
 
     # Replaces values in the province columns
     data = data.replace("Groningen (PV)", "Groningen")
@@ -72,32 +91,28 @@ def convert_safety(filename):
 
     # Creates a multi-index dataframe with province as the first index and year as the second
     data = data.set_index(['Province', 'Year'])
-
     return data
 
-def df_to_nested_dict(df: pd.DataFrame) -> dict:
+# def df_to_nested_dict(df: pd.DataFrame) -> dict:
+def df_to_nested_dict(df, name):
     """"
-    Creates a nested dict from the multi-index dataframe
+    Creates a nested dict from the multi-index dataframe and turn it into a json file
     """
     # 
     nested_dict = df.groupby(level=0).apply(lambda df: df.xs(df.name).to_dict(orient='index')).to_dict()
     # pprint(nested_dict)
 
-    return nested_dict
-
-
+    with open ("data/" + name + ".json", "w") as infile:
+        json.dump(nested_dict, infile)
+  
 
 if __name__ == '__main__':
     immi = convert_immigration(f'data/Immigratie_per_gemeente.csv')
     safe = convert_safety(f'data/veiligheidsbeleving_gemeente.csv')    
     
-    data_immi = df_to_nested_dict(immi)
-    data_safe = df_to_nested_dict(safe)
+    df_to_nested_dict(immi, 'immi')
+    df_to_nested_dict(safe, 'safe')
     
-    # Creates a json string from the dict
-    json_string_immi = json.dumps(data_immi)
-    json_string_safe = json.dumps(data_safe)
-
 
 
 
