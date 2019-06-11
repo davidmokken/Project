@@ -25,6 +25,7 @@ Finished converting all data. Made a quick html page but that is the last step f
 # Day 3:
 
 Worked with the datamap to link the different years. Struggling with the promise function. Bar chart can be easily fixed but linking the map.json and my own data and also add the different years have taken hours of work today.
+UPDATE: Finally works.
 
 Feedback:
 Didn't really get feedback actually. They all thought I was doing well.
