@@ -34,14 +34,9 @@ const path = d3.geoPath().projection(projection);
 svg.call(tip);
 
 var requests = [d3.json('data/ned.json'), d3.json('data/immi.json')];
-// Promise.all([d3.json('data/ned.json'), d3.json('data/immi.json')
-// ]).then(
-//   d => ready(null, d[0], d[1], '2017')
-// );
 
 Promise.all(requests).then(function(response) {
-  ready(null, response[0], response[1]);
-  return  response// update(year);
+  ready(null, response[0], response[1]);  
 }).catch(function(e){
   throw(e);
 });
@@ -52,17 +47,17 @@ const ColorList = {};
 function ready(error, data, immigrants) {
 //   // Starts shows a bar chart of the verdeling van geloof in the Netherlands as a whole
 //   updateBar(population['Nederland'])
-
-  svg.append('g')
+  console.log()
+  var svg_map = svg.append('g')
     .attr('class', 'countries')
     .selectAll('path')
     .data(data.features)
     .enter()
     .append('path')
     .attr('d', path)
-    .style('fill', function(d){
-        return ColorList[d.properties.name]
-    })
+    // .style('fill', function(d){
+    //     return colorscale(immigrants[year][d.properties.name]["Total number with MB"])
+    // })
     .attr("class", function(d, i) {
         return d.properties.name;
     })
@@ -101,42 +96,41 @@ function ready(error, data, immigrants) {
 
 function update(year){
   data.features.forEach(d =>  { 
-    console.log(data.features)
-    if (d.properties.type != "Bijzondere Gemeenten") {
-      d.total_immi = immigrants[year][d.properties.name]["Total number with MB"]};
-    });
+    if (d.properties.type == "Provincie") {
+      d.total_immi = immigrants[year][d.properties.name]["Total number with MB"];
+    }  
+  })
+  
+  svg_map.style('fill', function(d){
+    if (d.properties.type == "Provincie"){
+      return colorscale(immigrants[year][d.properties.name]["Total number with MB"]);
+    }
+  })
 
-}
+
+};
+    
+
 
 
 var clickEventMap = function() {
     $("#2013").on("click", function() {
-      // var year = 2013;
-      console.log("HENK")
       update("2013");
     });
   
     $("#2014").on("click", function() {
-      // var year = 2012;
-      console.log("HENK222")
       update("2014");
     });
   
     $("#2015").on("click", function() {
-      // var year = 2011;
-      console.log("HENK333")
       update("2015");
     });
   
     $("#2016").on("click", function() {
-      // var year = 2010;
-      console.log("HENK444")
       update("2016");
     });
   
     $("#2017").on("click", function() {
-      // var year = 2009;
-      console.log("HENK555")
       update("2017");
     });
   };
