@@ -43,7 +43,7 @@ def convert_immigration(filename):
     data = data.replace("Limburg (PV)", "Limburg")
 
     # Creates a multi-index dataframe with province as the first index and year as the second
-    data = data.set_index(['Province', 'Year'])
+    data = data.set_index(['Year', 'Province'])
 
     # Drops the year 2018, since the other dataset does not have a 2018
     data = data.drop(index=2018, level=1)
