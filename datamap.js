@@ -15,7 +15,7 @@ var name;
 
 // Need to change the color scaling
 const colorscale = d3.scaleLinear()
-  .domain([4, 80])
+  .domain([40000, 800000])
   .range(["#EFEFFF","#02386F"]);
 
 const svg = d3.select('#datamap')
@@ -24,6 +24,12 @@ const svg = d3.select('#datamap')
   .attr('height', height)
   .append('g')
   .attr('class', 'map');
+
+  svg.append('text')
+  .attr('x', (width / 2))
+  .attr('y',  (margin.top/2))
+  .attr('text-anchor', 'middle')
+  .text('The Netherlands')
 
 // These numbers show the Netherlands out of the entire and complete worldmap
 const projection = d3.geoRobinson()
@@ -48,7 +54,7 @@ const Total_Immi_Prov = {};
 const ColorList = {};
 
 function ready(error, data, immigrants) {
-//   // Starts shows a bar chart of the verdeling van geloof in the Netherlands as a whole
+
   var svg_map = svg.append('g')
     .attr('class', 'countries')
     .selectAll('path')
@@ -83,12 +89,6 @@ function ready(error, data, immigrants) {
         updateBar(immigrants[year][name])
       })
 
-  svg.append('text')
-      .attr('x', (width / 2))
-      .attr('y',  (margin.top/2))
-      .attr('text-anchor', 'middle')
-      .text('The Netherlands')
-
 
   svg.append('path')
     // .datum(topojson.mesh(data.features, (a, b) => a.id !== b.id))
@@ -105,7 +105,7 @@ function update(year){
   
   svg_map.style('fill', function(d){
     if (d.properties.type == "Provincie"){
-      return colorscale((immigrants[year][d.properties.name]["Total number with MB"])/10000);
+      return colorscale(immigrants[year][d.properties.name]["Total number with MB"]);
     }
   })
 
@@ -117,6 +117,7 @@ var clickEventMap = function() {
     $("#dropdown").on("click", function() {
       year = $(this).val()
       update(year)
+      console.log(year)
       updateBar(immigrants[year][name]);
     });
 }
@@ -143,11 +144,13 @@ var clickEventMap = function() {
   // };
 
 function start(){
-  update("2017")
   year = "2017"
+  name = "Nederland"
+  update(year)
+  updateBar(immigrants['2016'][name])
+  updateBar(immigrants[year][name])
 }
 
-// update("2017");
 start();
 clickEventMap();
 

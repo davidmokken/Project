@@ -1,12 +1,12 @@
 
 // Constant variables
 const width_svg = 700;
-const height_svg = 900;
+const height_svg = 700;
 const width_bar = 600;
 const height_bar = 600;
 const bar_spacing = 2;
 const max_domain = 100000;
-var spacing_xaxis = 52;
+var spacing_xaxis = 50;
 
 var svg_bar = d3.select("#bar")
             .append("svg")
@@ -31,7 +31,7 @@ var yScale = d3.scaleLinear()
                 .range([height_bar, 0]);
 
 var xAxis = g => g
-    .attr('transform', "translate(50, 600)")
+    .attr('transform', "translate(50, 610)")
     .call(d3.axisBottom(xScale));
 
 var yAxis = g => g
@@ -45,6 +45,8 @@ svg_bar.append("g")
 svg_bar.append("g")
 .attr("class", "y-axis")
 
+// updateBar()
+
 svg_bar.append("text")
 .attr("transform", "rotate(-90)")
 .attr("y", 25)
@@ -52,8 +54,6 @@ svg_bar.append("text")
 .attr("font-size", "13px")
 .attr("font-family", "sans-serif")
 .text("Amount of people with immigrant descent");
-
-// updateBar()
 
 function updateBar(data){
     
@@ -81,6 +81,7 @@ function updateBar(data){
     .call(xAxis)
 
     yScale.domain([0, d3.max(data_list, function(d) {
+        console.log(d)
         return d['value']})])
 
     svg_bar.selectAll(".y-axis").transition().duration(speed)
@@ -100,14 +101,25 @@ function updateBar(data){
         .merge(bar)
         .transition().duration(speed)
 
+        
+
+
+    
+    // var bars = svg_bar.selectAll("rect")
+    //             .data(data_list)
+    //             .enter()
+    //             .append("rect");
+    console.log(data_list)
 
     bar.attr("x", function(d, i) {
         return spacing_xaxis + (i * width_bar / data_list.length);
         })
         .attr("y", function(d) {
                 value = d['value']
+                console.log(value)
             return yScale(value);
         })
+        // .attr("width", width_bar / data_list.length - bar_spacing)
         .attr("height", function(d){
             return height_bar - yScale(d['value']);
         })
