@@ -46,7 +46,7 @@ def convert_immigration(filename):
     data = data.set_index(['Year', 'Province'])
 
     # Drops the year 2018, since the other dataset does not have a 2018
-    data = data.drop(index=2018, level=1)
+    data = data.drop(index=2018, level=0)
 
     return data
 
@@ -82,7 +82,7 @@ def convert_safety(filename):
     data = data.replace("Overijssel (PV)", "Overijssel")
     data = data.replace("Flevoland (PV)", "Flevoland")
     data = data.replace("Gelderland (PV)", "Gelderland")
-    data = data.replace("Utrecht (PV))", "Utrecht")
+    data = data.replace("Utrecht (PV)", "Utrecht")
     data = data.replace("Noord-Holland (PV)", "Noord-Holland")
     data = data.replace("Zuid-Holland (PV)", "Zuid-Holland")
     data = data.replace("Zeeland (PV)", "Zeeland")
@@ -90,10 +90,11 @@ def convert_safety(filename):
     data = data.replace("Limburg (PV)", "Limburg")
 
     # Creates a multi-index dataframe with province as the first index and year as the second
-    data = data.set_index(['Province', 'Year'])
+    # data = data.set_index(['Province', 'Year'])
+    data = data.set_index(['Year', 'Province'])
+    
     return data
 
-# def df_to_nested_dict(df: pd.DataFrame) -> dict:
 def df_to_nested_dict(df, name):
     """"
     Creates a nested dict from the multi-index dataframe and turn it into a json file

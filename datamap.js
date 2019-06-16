@@ -4,15 +4,18 @@ const format = d3.format(',');
 const tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
-  .html(d => `<strong>Province: </strong><span class='details'>${d.properties.name}<br></span><strong>Aantal Immigranten: </strong><span class='details'>${format(d.total_immi)}</span>`);
+  .html(d => `<strong>Province: </strong><span class='details'>${d.properties.name}<br></span><strong>Amount of people with immigrant background: </strong><span class='details'>${format(d.total_immi)}</span>`);
 
 const margin = {top: 0, right: 0, bottom: 0, left: 0};
 const width = 600 - margin.left - margin.right;
 const height = 500 - margin.top - margin.bottom;
+var year;
+var name;
+
 
 // Need to change the color scaling
 const colorscale = d3.scaleLinear()
-  .domain([0, 500000])
+  .domain([4, 80])
   .range(["#EFEFFF","#02386F"]);
 
 const svg = d3.select('#datamap')
@@ -46,8 +49,6 @@ const ColorList = {};
 
 function ready(error, data, immigrants) {
 //   // Starts shows a bar chart of the verdeling van geloof in the Netherlands as a whole
-//   updateBar(population['Nederland'])
-  console.log()
   var svg_map = svg.append('g')
     .attr('class', 'countries')
     .selectAll('path')
@@ -55,9 +56,7 @@ function ready(error, data, immigrants) {
     .enter()
     .append('path')
     .attr('d', path)
-    // .style('fill', function(d){
-    //     return colorscale(immigrants[year][d.properties.name]["Total number with MB"])
-    // })
+
     .attr("class", function(d, i) {
         return d.properties.name;
     })
@@ -79,9 +78,11 @@ function ready(error, data, immigrants) {
           .style('stroke-width',0.3);
       })
 
-    //   .on("click", function(d){
-    //     updateBar(population[d.properties.name])
-    //   })
+      .on("click", function(d){
+        name = d.properties.name
+        updateBar(immigrants[year][name])
+      })
+
   svg.append('text')
       .attr('x', (width / 2))
       .attr('y',  (margin.top/2))
@@ -94,6 +95,7 @@ function ready(error, data, immigrants) {
     .attr('class', 'names')
     .attr('d', path);
 
+
 function update(year){
   data.features.forEach(d =>  { 
     if (d.properties.type == "Provincie") {
@@ -103,39 +105,50 @@ function update(year){
   
   svg_map.style('fill', function(d){
     if (d.properties.type == "Provincie"){
-      return colorscale(immigrants[year][d.properties.name]["Total number with MB"]);
+      return colorscale((immigrants[year][d.properties.name]["Total number with MB"])/10000);
     }
   })
 
 
 };
-    
-
 
 
 var clickEventMap = function() {
-    $("#2013").on("click", function() {
-      update("2013");
+    $("#dropdown").on("click", function() {
+      year = $(this).val()
+      update(year)
+      updateBar(immigrants[year][name]);
     });
+}
   
-    $("#2014").on("click", function() {
-      update("2014");
-    });
+  //   $("#2014").on("click", function() {
+  //     update("2014");
+  //     updateBar(immigrants, "2014");
+  //   });
   
-    $("#2015").on("click", function() {
-      update("2015");
-    });
+  //   $("#2015").on("click", function() {
+  //     update("2015");
+  //     updateBar(immigrants, "2015")
+  //   });
   
-    $("#2016").on("click", function() {
-      update("2016");
-    });
+  //   $("#2016").on("click", function() {
+  //     update("2016");
+  //     updateBar(immigrants, "2016")
+  //   });
   
-    $("#2017").on("click", function() {
-      update("2017");
-    });
-  };
+  //   $("#2017").on("click", function() {
+  //     update("2017");
+  //     updateBar(immigrants, "2017")
+  //   });
+  // };
 
-update("2017");
+function start(){
+  update("2017")
+  year = "2017"
+}
+
+// update("2017");
+start();
 clickEventMap();
 
 }
