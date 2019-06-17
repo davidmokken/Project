@@ -12,7 +12,6 @@ const height = 500 - margin.top - margin.bottom;
 var year;
 var name;
 
-
 // Need to change the color scaling
 const colorscale = d3.scaleLinear()
   .domain([40000, 800000])
@@ -42,10 +41,10 @@ const path = d3.geoPath().projection(projection);
 
 svg.call(tip);
 
-var requests = [d3.json('data/ned.json'), d3.json('data/immi.json')];
+var requests = [d3.json('data/ned.json'), d3.json('data/immi.json'), d3.json('data/safe.json')];
 
 Promise.all(requests).then(function(response) {
-  ready(null, response[0], response[1]);  
+  ready(null, response[0], response[1], response[2]);  
 }).catch(function(e){
   throw(e);
 });
@@ -53,8 +52,9 @@ Promise.all(requests).then(function(response) {
 const Total_Immi_Prov = {};
 const ColorList = {};
 
-function ready(error, data, immigrants) {
+function ready(error, data, immigrants, safe) {
 
+  console.log(safe)
   var svg_map = svg.append('g')
     .attr('class', 'countries')
     .selectAll('path')
@@ -87,6 +87,7 @@ function ready(error, data, immigrants) {
       .on("click", function(d){
         name = d.properties.name
         updateBar(immigrants[year][name])
+        // liquidfillgauge(safe[year][name])
       })
 
 
@@ -114,11 +115,12 @@ function update(year){
 
 
 var clickEventMap = function() {
-    $("#dropdown").on("click", function() {
+    $("#dropdown").on("change", function() {
       year = $(this).val()
       update(year)
       console.log(year)
       updateBar(immigrants[year][name]);
+      d3.select("#fillgauge").call(d3.liquidfillgauge, 2);
     });
 }
   

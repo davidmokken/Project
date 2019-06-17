@@ -1,8 +1,8 @@
 
 // Constant variables
-const width_svg = 700;
-const height_svg = 900;
-const width_bar = 600;
+const width_svg = 500;
+const height_svg = 700;
+const width_bar = 400;
 const height_bar = 600;
 const bar_spacing = 2;
 const max_domain = 100000;
@@ -57,18 +57,34 @@ svg_bar.append("text")
 
 function updateBar(data){
     
-    // Fix hardcopy
+    // Creates an hardcopy of the acquired data
     data_list = []
-    data1 = data 
-    
     speed = 3;
 
-    delete data1['Dutch (relative)']
-    delete data1['Non-Western (relative)']
-    delete data1['Total Migration Background (relative)']
-    delete data1['Total number with MB']
-    delete data1['Dutch (relative)']
-    delete data1['Western (relative)']
+    function iterationCopy(src) {
+        let target = {};
+        for (let prop in src) {
+          if (src.hasOwnProperty(prop)) {
+            target[prop] = src[prop];
+          }
+        }
+        return target;
+      }
+      const source = data;
+      const data1 = iterationCopy(source);
+    
+    // Deletes the unused data from the hardcopy
+      delete data1['Dutch (relative)']
+      delete data1['Non-Western (relative)']
+      delete data1['Total Migration Background (relative)']
+      delete data1['Total number with MB']
+      delete data1['Dutch (relative)']
+      delete data1['Western (relative)']
+
+      // Check if clones it and not changing it
+    //   console.log(source); // 'a'
+    //   console.log(data1); // 1
+
 
 
     for (key in data1){
