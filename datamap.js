@@ -49,12 +49,9 @@ Promise.all(requests).then(function(response) {
   throw(e);
 });
 
-const Total_Immi_Prov = {};
-const ColorList = {};
-
 function ready(error, data, immigrants, safe) {
 
-  console.log(safe)
+  // console.log(safe)
   var svg_map = svg.append('g')
     .attr('class', 'countries')
     .selectAll('path')
@@ -86,8 +83,9 @@ function ready(error, data, immigrants, safe) {
 
       .on("click", function(d){
         name = d.properties.name
-        updateBar(immigrants[year][name])
-        // liquidfillgauge(safe[year][name])
+        radio = getRadio()
+        updateBar(immigrants[year][name], radio)
+        d3.select("#fillgauge").call(d3.liquidfillgauge, (safe[year][name]["Grade for safety (neighbourhood)"]));
       })
 
 
@@ -109,8 +107,6 @@ function update(year){
       return colorscale(immigrants[year][d.properties.name]["Total number with MB"]);
     }
   })
-
-
 };
 
 
@@ -118,42 +114,49 @@ var clickEventMap = function() {
     $("#dropdown").on("change", function() {
       year = $(this).val()
       update(year)
-      console.log(year)
-      updateBar(immigrants[year][name]);
-      d3.select("#fillgauge").call(d3.liquidfillgauge, 2);
+      radio = getRadio()
+      updateBar((immigrants[year][name]), radio);
+      // barchanger()
+      d3.select("#fillgauge").call(d3.liquidfillgauge, (safe[year][name]["Grade for safety (neighbourhood)"]));
     });
 }
+
+function getRadio(){
+  var radios = document.getElementsByName('radio');
+  for (var i = 0, length = radios.length; i < length; i++)
+  {
+   if (radios[i].checked)
+   {
+    // do whatever you want with the checked radio
+    return radios[i].value
   
-  //   $("#2014").on("click", function() {
-  //     update("2014");
-  //     updateBar(immigrants, "2014");
-  //   });
-  
-  //   $("#2015").on("click", function() {
-  //     update("2015");
-  //     updateBar(immigrants, "2015")
-  //   });
-  
-  //   $("#2016").on("click", function() {
-  //     update("2016");
-  //     updateBar(immigrants, "2016")
-  //   });
-  
-  //   $("#2017").on("click", function() {
-  //     update("2017");
-  //     updateBar(immigrants, "2017")
-  //   });
-  // };
+    // only one radio can be logically checked, don't check the rest
+    break;
+   }
+  } 
+}
+
+var barchanger = function() {
+  $("input[type=radio][name=radio]").on("change", function() {
+    input = $(this).val()
+    console.log(input)
+    updateBar((immigrants[year][name]), input)
+
+  });
+}
 
 function start(){
   year = "2017"
   name = "Nederland"
   update(year)
-  updateBar(immigrants['2016'][name])
-  updateBar(immigrants[year][name])
+  radio = getRadio()
+  updateBar((immigrants['2016'][name]), radio)
+  updateBar((immigrants[year][name]), radio)
+  barchanger()
 }
 
 start();
 clickEventMap();
+barchanger();
 
 }

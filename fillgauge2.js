@@ -162,6 +162,7 @@
               .endAngle(gaugeCircleX(1))
               .outerRadius(gaugeCircleY(radius))
               .innerRadius(gaugeCircleY(radius - circleThickness));
+
             gaugeGroup.append("path")
               .attr("d", gaugeCircleArc)
               .style("fill", config.get("circleColor"))
@@ -200,7 +201,8 @@
             // The inner circle with the clipping wave attached.
             var fillCircleGroup = gaugeGroup.append("g")
               .attr("clip-path", "url(#" + clipId + ")");
-            fillCircleGroup.append("circle")
+            
+              fillCircleGroup.append("circle")
               .attr("cx", radius)
               .attr("cy", radius)
               .attr("r", fillCircleRadius);

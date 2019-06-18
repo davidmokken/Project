@@ -55,13 +55,14 @@ svg_bar.append("text")
 
 // updateBar()
 
-function updateBar(data){
+function updateBar(data, radio){
     
     // Creates an hardcopy of the acquired data
     data_list = []
     speed = 3;
 
-    function iterationCopy(src) {
+    // Hardcopy for the total chart
+    function iterationCopyTotal(src) {
         let target = {};
         for (let prop in src) {
           if (src.hasOwnProperty(prop)) {
@@ -69,29 +70,55 @@ function updateBar(data){
           }
         }
         return target;
-      }
-      const source = data;
-      const data1 = iterationCopy(source);
-    
-    // Deletes the unused data from the hardcopy
-      delete data1['Dutch (relative)']
-      delete data1['Non-Western (relative)']
-      delete data1['Total Migration Background (relative)']
-      delete data1['Total number with MB']
-      delete data1['Dutch (relative)']
-      delete data1['Western (relative)']
+    }
+    const sourceTotal = data;
+    const dataTotal = iterationCopyTotal(sourceTotal);
 
-      // Check if clones it and not changing it
-    //   console.log(source); // 'a'
-    //   console.log(data1); // 1
+    // Deletes the unused data from the hardcopy for the total chart
+    delete dataTotal['Dutch (relative)']
+    delete dataTotal['Non-Western (relative)']
+    delete dataTotal['Total Migration Background (relative)']
+    delete dataTotal['Total number with MB']
+    delete dataTotal['Dutch (relative)']
+    delete dataTotal['Western (relative)']
 
 
+    // Hardcopy for the relative chart
+    function iterationCopyRelative(src) {
+        let target = {};
+        for (let prop in src) {
+          if (src.hasOwnProperty(prop)) {
+            target[prop] = src[prop];
+          }
+        }
+        return target;
+    }
+    const sourceRelative = data;
+    const dataRelative = iterationCopyRelative(sourceRelative);
 
-    for (key in data1){
-        data_list.push({name: key, value: data1[key]})
+    // Deletes the unused data from the hardcopy for the relative chart
+    delete dataRelative['Marrocan']
+    delete dataRelative['Dutch Antillies']
+    delete dataRelative['Surinam']
+    delete dataRelative['Total number with MB']
+    delete dataRelative['Turkey']
+    delete dataRelative['Western']
+    delete dataRelative['Other']
+
+    if (radio === "total"){
+        used_data = dataTotal;
+    }
+    else {
+        used_data = dataRelative;
+    }
+
+    for (key in used_data){
+        data_list.push({name: key, value: used_data[key]})
     };
 
-    xScale.domain(Object.keys(data1))
+    // console.log(used_data)
+
+    xScale.domain(Object.keys(used_data))
 
     svg_bar.selectAll(".x-axis").transition().duration(speed)
     .call(xAxis)
@@ -144,7 +171,6 @@ function updateBar(data){
         //     hover.style("display", "none")
         // });        
         
-
 
 }
 

@@ -332,4 +332,4 @@ d3.liquidfillgauge = function(g, value, settings) {
     });
 };
 
-// svg_fill.call(d3.liquidfillgauge, 7.6);
+svg_fill.call(d3.liquidfillgauge, 7.6);
