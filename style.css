@@ -81,6 +81,24 @@ body {
   }
 }
 
+.line {
+  fill: none;    
+  /* stroke: #ffab00; */
+  stroke-width: 3;
+}
+
+.dot {
+  fill: #ffab00;
+  stroke: #fff;
+}
+
+.focus circle {
+fill: none;
+stroke: steelblue;
+}
+
+
+
 .names {
   fill: none;
   stroke: #fff;
@@ -145,3 +163,24 @@ body {
   top: 50%;
   left: 100%;
   }
+
+.hero-image {
+  /* background-image: url("/images/migranten.jpg"); */
+  background-color: #cccccc;
+  height: 700px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+

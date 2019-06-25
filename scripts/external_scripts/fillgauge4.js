@@ -5,29 +5,29 @@
  */
 
 // Consant variables
-const width_svg_fill = "97%";
-const height_svg_fill = 200;
+// const width_svg_fill = "97%";
+// const height_svg_fill = 200;
 
 
-var svg_fill = d3.select("#fillgauge")
-                .append("svg")
-                .attr("width", width_svg_fill)
-                .attr("height", height_svg_fill);
+// var svg_fill2 = d3.select("#fillgauge2")
+//                 .append("svg")
+//                 .attr("width", width_svg_fill)
+//                 .attr("height", height_svg_fill);
                 
 
 
-var defaultConfig = {
+var defaultConfig4 = {
     // Values
     minValue: 0, // The gauge minimum value.
-    maxValue: 10, // The gauge maximum value.
+    maxValue: 100, // The gauge maximum value.
 
     // Styles
     circleThickness: 0.05, // The outer circle thickness as a percentage of it's radius.
     circleFillGap: 0.05, // The size of the gap between the outer circle and wave circle as a percentage of the outer circles radius.
-    circleColor: "#178BCA", // The color of the outer circle.
+    circleColor: "#aaff00", // The color of the outer circle.
     backgroundColor: null, // The color of the background
-    waveColor: "#178BCA", // The color of the fill wave.
-    width: 0, // You might want to set the width and height if it is not detected properly by the plugin
+    waveColor: "#00ffaa", // The color of the fill wave.
+    width: 250, // You might want to set the width and height if it is not detected properly by the plugin
     height: 0,
 
     // Gradient
@@ -54,21 +54,20 @@ var defaultConfig = {
     // Text
     textVertPosition: 0.5, // The height at which to display the percentage text withing the wave circle. 0 = bottom, 1 = top.
     textSize: 1, // The relative height of the text to display in the wave circle. 1 = 50%
-    displayPercent: false, // If true, a % symbol is displayed after the value.
-    textColor: "#045681", // The color of the value text when the wave does not overlap it.
-    waveTextColor: "#A4DBf8", // The color of the value text when the wave overlaps it.
+    displayPercent: true, // If true, a % symbol is displayed after the value.
+    textColor: "#55ff00", // The color of the value text when the wave does not overlap it.
+    waveTextColor: "#55ff00", // The color of the value text when the wave overlaps it.
 };
-// value = 7.6
 
 
-d3.liquidfillgauge = function(g, value, settings) {
+d3.liquidfillgauge4 = function(g, value, settings) {
 // function updateFill(g, value, settings) {
     // console.log(g) 
     
     // var fill = svg_fill.d3.select()
     
     // // Handle configuration
-    var config = d3.map(defaultConfig);
+    var config = d3.map(defaultConfig4);
 
     d3.map(settings).each(function(val, key) {
         config.set(key, val);

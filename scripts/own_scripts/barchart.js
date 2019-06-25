@@ -5,7 +5,6 @@ const height_svg = 700;
 const width_bar = 400;
 const height_bar = 600;
 const bar_spacing = 2;
-const max_domain = 100000;
 var spacing_xaxis = 52;
 
 var svg_bar = d3.select("#bar")
@@ -53,13 +52,16 @@ svg_bar.append("text")
 .attr("font-family", "sans-serif")
 .text("Amount of people with immigrant descent");
 
-// updateBar()
+// id_list = [""]
+
+// svg_bar.selectAll("rect")
+//         .data()
 
 function updateBar(data, radio){
     
     // Creates an hardcopy of the acquired data
     data_list = []
-    speed = 3;
+    speed = 1000;
 
     // Hardcopy for the total chart
     function iterationCopyTotal(src) {
@@ -79,7 +81,6 @@ function updateBar(data, radio){
     delete dataTotal['Non-Western (relative)']
     delete dataTotal['Total Migration Background (relative)']
     delete dataTotal['Total number with MB']
-    delete dataTotal['Dutch (relative)']
     delete dataTotal['Western (relative)']
 
 
@@ -117,7 +118,7 @@ function updateBar(data, radio){
     };
 
     // console.log(used_data)
-
+    // console.log(data_list)
     xScale.domain(Object.keys(used_data))
 
     svg_bar.selectAll(".x-axis").transition().duration(speed)
@@ -131,14 +132,22 @@ function updateBar(data, radio){
     
     var bar = svg_bar.selectAll(".bar")
                     .data(data_list)  
-                    
+    // Hoort de laatste stap te zijn
+    // moet zijn
+    // select + data
+    // enter + append
+    // exit + remove
+    
+
     bar.exit().remove();
 
     // Draws the bars with the acquired data
     bar.enter()
         .append("rect")
         .attr("class", "bar")
-        .attr("fill", "steelblue")
+        .attr("fill", function(d) {
+            return "rgb(" + (height_bar - yScale(d['value'])) + ", 0, 0)";
+        })
         .attr("width", width_bar / data_list.length - bar_spacing)
         .merge(bar)
         .transition().duration(speed)

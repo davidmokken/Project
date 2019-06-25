@@ -7,8 +7,8 @@ const tip = d3.tip()
   .html(d => `<strong>Province: </strong><span class='details'>${d.properties.name}<br></span><strong>Amount of people with immigrant background: </strong><span class='details'>${format(d.total_immi)}</span>`);
 
 const margin = {top: 0, right: 0, bottom: 0, left: 0};
-const width = 600 - margin.left - margin.right;
-const height = 500 - margin.top - margin.bottom;
+const width = 550 - margin.left - margin.right;
+const height = 600 - margin.top - margin.bottom;
 var year;
 var name;
 
@@ -32,8 +32,8 @@ const svg = d3.select('#datamap')
 
 // These numbers show the Netherlands out of the entire and complete worldmap
 const projection = d3.geoRobinson()
-  .scale(8200)
-  .center([0, 52])
+  .scale(7300)
+  .center([0.5, 52])
   .rotate([-4.8, 0])
   .translate( [width / 2, height / 2]);
 
@@ -41,17 +41,16 @@ const path = d3.geoPath().projection(projection);
 
 svg.call(tip);
 
-var requests = [d3.json('data/ned.json'), d3.json('data/immi.json'), d3.json('data/safe.json')];
+var requests = [d3.json('data/ned.json'), d3.json('data/immi.json'), d3.json('data/safe.json'), d3.json('data/crime.json')];
 
 Promise.all(requests).then(function(response) {
-  ready(null, response[0], response[1], response[2]);  
+  ready(null, response[0], response[1], response[2], response[3]);  
 }).catch(function(e){
   throw(e);
 });
 
-function ready(error, data, immigrants, safe) {
+function ready(error, data, immigrants, safe, crime) {
 
-  // console.log(safe)
   var svg_map = svg.append('g')
     .attr('class', 'countries')
     .selectAll('path')
@@ -85,12 +84,16 @@ function ready(error, data, immigrants, safe) {
         name = d.properties.name
         radio = getRadio()
         updateBar(immigrants[year][name], radio)
+        updateLine(crime[name], name)
+        console.log(safe[year][name])
         d3.select("#fillgauge").call(d3.liquidfillgauge, (safe[year][name]["Grade for safety (neighbourhood)"]));
+        // d3.select("#fillgauge2").call(d3.liquidfillgauge2, (safe[year][name]["Crime increased (neighbourhood)"]));
+        // d3.select("#fillgauge3").call(d3.liquidfillgauge3, (safe[year][name]["Feels Unsafe (general)"]));
+        d3.select("#fillgauge").on("valueChanged")((safe[year][name]["Grade for safety (neighbourhood)"]))// d3.select("#fillgauge4").call(d3.liquidfillgauge4, (safe[year][name]["Belief a lot of crime (neighbourhood)"]));
       })
 
 
   svg.append('path')
-    // .datum(topojson.mesh(data.features, (a, b) => a.id !== b.id))
     .attr('class', 'names')
     .attr('d', path);
 
@@ -121,6 +124,16 @@ var clickEventMap = function() {
     });
 }
 
+var clickNed = function(){
+  $("#nedbut").on("click", function() {
+    name = 'Nederland'
+    radio = getRadio()
+    updateBar((immigrants[year][name]), radio)
+    updateLine(crime[name], name);
+  });
+
+}
+
 function getRadio(){
   var radios = document.getElementsByName('radio');
   for (var i = 0, length = radios.length; i < length; i++)
@@ -139,7 +152,6 @@ function getRadio(){
 var barchanger = function() {
   $("input[type=radio][name=radio]").on("change", function() {
     input = $(this).val()
-    console.log(input)
     updateBar((immigrants[year][name]), input)
 
   });
@@ -152,11 +164,12 @@ function start(){
   radio = getRadio()
   updateBar((immigrants['2016'][name]), radio)
   updateBar((immigrants[year][name]), radio)
-  barchanger()
+  updateLine(crime[name], name)
 }
 
 start();
 clickEventMap();
 barchanger();
+clickNed();
 
 }

@@ -92,7 +92,53 @@ def convert_safety(filename):
     # Creates a multi-index dataframe with province as the first index and year as the second
     # data = data.set_index(['Province', 'Year'])
     data = data.set_index(['Year', 'Province'])
-    
+    return data
+
+def convert_crime(filename):
+    """
+    Converts the crime stat csv to pandas
+    """
+    # Load the necessary columns from the csv into pandas
+    data = pd.read_csv(filename, sep=';')
+
+    # Renames the column names
+    data.columns = ['Type Crime', 'Year', 'Province', 'Amount']
+
+    # Transforms strings to floats
+    data['Year'] = pd.to_numeric(data['Year'], errors='coerce')
+    data['Amount'] = pd.to_numeric(data['Amount'], errors='coerce')
+
+    # Replaces values in the crime columns
+    data = data.replace("1.2.3 Diefstal van brom-, snor-, fietsen", "Diefstal van brom-, snor-, fietsen")
+    data = data.replace("1.2.4 Zakkenrollerij", "Zakkenrollerij")
+    data = data.replace("1.4.1 Zedenmisdrijf", "Zedenmisdrijf")
+    data = data.replace("1.4.2 Moord, doodslag", "Moord, doodslag")
+    data = data.replace("1.4.3 Openlijk geweld (persoon)", "Openlijk geweld (persoon)")
+    data = data.replace("1.4.4 Bedreiging", "Bedreiging")
+    data = data.replace("1.4.6 Straatroof", "Straatroof")
+    data = data.replace("2.2.1 Vernieling cq. zaakbeschadiging", "Vernieling cq. zaakbeschadiging")
+    data = data.replace("2.5.2 Winkeldiefstal", "Winkeldiefstal")
+
+    # Replaces values in the province columns
+    data = data.replace("Groningen (PV)", "Groningen")
+    data = data.replace("Friesland (PV)", "Friesland")
+    data = data.replace("Drenthe (PV)", "Drenthe")
+    data = data.replace("Overijssel (PV)", "Overijssel")
+    data = data.replace("Flevoland (PV)", "Flevoland")
+    data = data.replace("Gelderland (PV)", "Gelderland")
+    data = data.replace("Utrecht (PV)", "Utrecht")
+    data = data.replace("Noord-Holland (PV)", "Noord-Holland")
+    data = data.replace("Zuid-Holland (PV)", "Zuid-Holland")
+    data = data.replace("Zeeland (PV)", "Zeeland")
+    data = data.replace("Noord-Brabant (PV)", "Noord-Brabant")
+    data = data.replace("Limburg (PV)", "Limburg")
+
+# Creates a multi-index dataframe with province as the first index and year as the second
+    data = data.pivot_table('Amount', ['Province', 'Year'], 'Type Crime')
+
+    # Drops the year 2018, since the other dataset does not have a 2018
+    data = data.drop(index=2018, level=1)
+    print(data)
     return data
 
 def df_to_nested_dict(df, name):
@@ -109,10 +155,12 @@ def df_to_nested_dict(df, name):
 
 if __name__ == '__main__':
     immi = convert_immigration(f'data/Immigratie_per_gemeente.csv')
-    safe = convert_safety(f'data/veiligheidsbeleving_gemeente.csv')    
+    safe = convert_safety(f'data/veiligheidsbeleving_gemeente.csv')  
+    crime = convert_crime(f'data/Misdrijven_per_gemeente.csv')   
     
     df_to_nested_dict(immi, 'immi')
     df_to_nested_dict(safe, 'safe')
+    df_to_nested_dict(crime, 'crime')
     
 
 
