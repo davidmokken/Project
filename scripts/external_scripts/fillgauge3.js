@@ -3,19 +3,7 @@
  * Copyright (c) 2015, Curtis Bratton
  * All rights reserved.
  */
-
-// Consant variables
-// const width_svg_fill = "97%";
-// const height_svg_fill = 200;
-
-
-// var svg_fill2 = d3.select("#fillgauge2")
-//                 .append("svg")
-//                 .attr("width", width_svg_fill)
-//                 .attr("height", height_svg_fill);
-                
-
-
+             
 var defaultConfig3 = {
     // Values
     minValue: 0, // The gauge minimum value.
@@ -199,8 +187,7 @@ d3.liquidfillgauge3 = function(g, value, settings) {
 
         var gaugeGroupDefs = gaugeGroup.append("defs");
 
-        // var clipId = idGenerator("clipWave");
-        var clipId = 3;
+        var clipId = "grade3"
  
         var waveGroup = gaugeGroupDefs
             .append("clipPath")
@@ -219,10 +206,7 @@ d3.liquidfillgauge3 = function(g, value, settings) {
 
         if (config.get("fillWithGradient")) {
             var points = config.get("gradientPoints");
-            console.log(points)
-            // var gradientId = idGenerator("linearGradient")0
-            // var gradientId = 0
-            // console.log(gradientId)
+            var gradientId = 0
             var grad = gaugeGroupDefs.append("linearGradient")
                 .attr("id", gradientId)
                 .attr("x1", points[0])
@@ -311,7 +295,6 @@ d3.liquidfillgauge3 = function(g, value, settings) {
 
         // Event to update the value
         gauge.on("valueChanged", function(newValue) {
-            console.log("KAAS")
             transition(value, newValue, config.get("waveRise"), config.get("valueCountUp"));
             value = newValue;
         });

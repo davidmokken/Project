@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <script type="text/javascript" src="scripts/external_scripts/d3/d3.js"></script>
+    <script type="text/javascript" src="/scripts/external_scripts/d3/d3.js"></script>
+    <script src="/scripts/external_scripts/d3-tip.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" href="images/icon.png" type="images/gif" sizes="16x16">
 
@@ -43,7 +44,7 @@
 
 </header>
 
-<body>
+<body style="font-family: goudy old style">
     <!-- Page Content -->
     <div class="hero-image" style="background-image: url(/images/misdaadcijfers.png)">
         <div class="hero-text">
@@ -54,16 +55,28 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="col-lg-3 my-1">
-                        <label class="mr-sm-2" for="dropdown">Choose Year</label>
-                        <select class="custom-select mr-sm-2" id="dropdown">
-                        <option value="2013" id="2013">2013</option>
-                        <option value="2014" id="2014">2014</option>
-                        <option value="2015" id="2015">2015</option>
-                        <option value="2016" id="2016">2016</option>
-                        <option selected value="2017" id="2017">2017</option>
-                        </select>
+
+                    <div class="row">
+                        <div class="col-lg-3 my-1">
+                            <label class="mr-sm-2" for="dropdown">Choose Year</label>
+                            <select class="custom-select mr-sm-2" id="dropdown">
+                            <option value="2013" id="2013">2013</option>
+                            <option value="2014" id="2014">2014</option>
+                            <option value="2015" id="2015">2015</option>
+                            <option value="2016" id="2016">2016</option>
+                            <option selected value="2017" id="2017">2017</option>
+                            </select>
+                        
+                         </div>
+                         <div class="col-lg-9" style="text-align: center">
+                                <label for="datamap" style="font-size: 50px" id="label">The Netherlands</label>
+
+
+                         </div>
+
+                        
                     </div>
+
                     <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
                     <script src="/scripts/external_scripts/d3-tip.js"></script>
                     <script src='https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.10.3/babel.min.js'></script>
@@ -97,22 +110,23 @@
                         <!-- fillgauge1 -->
                         <script src="http://d3js.org/d3.v4.min.js" type="text/javascript"></script>
                         <div class="col">
+                            <label for="fillgauge" style="font-size: 20px; color: black" id="fg1">Grade for safety in neighbourhood</label>
                             <svg id="fillgauge" width="100%"></svg>
                             <script src="scripts/external_scripts/fillgauge.js" type="text/javascript"></script>
                             <script type="text/javascript">
-                                d3.select("#fillgauge").call(d3.liquidfillgauge, 5);
+                                d3.select("#fillgauge").call(d3.liquidfillgauge, 6.1);
                             </script>
                         </div>
 
                         <!-- fillgauge2 -->
                         <div class="col">
+                            <label for="fillgauge" style="font-size: 20px; color: black" id="fg1">Crime has increased in the neighbourhood</label>
                             <svg id="fillgauge2" width="100%"></svg>
                             <script src="scripts/external_scripts/fillgauge2.js" type="text/javascript"></script>
                             <script type="text/javascript">
                                 d3.select("#fillgauge2").call(d3.liquidfillgauge2, 88);
                             </script>
                         </div>
-                        <!-- <div class="w-100"> -->
                         </div>
 
                         <div class="row">
@@ -123,7 +137,18 @@
                             <script type="text/javascript">
                                 d3.select("#fillgauge3").call(d3.liquidfillgauge3, 33);
                             </script>
+                            <label for="fillgauge" style="font-size: 20px; color: black" id="fg1">Feels unsafe</label>
                         </div>
+
+                        <!-- fillgauge4 -->
+                        <div class="col">
+                                <svg id="fillgauge4" width="100%"></svg> 
+                                <script src="scripts/external_scripts/fillgauge4.js" type="text/javascript"></script>
+                                <script type="text/javascript">
+                                    d3.select("#fillgauge4").call(d3.liquidfillgauge4, 88);
+                                </script>
+                                <label for="fillgauge" style="font-size: 20px; color: black" id="fg1">Belief there is a lot of crime in the neighbourhood</label>
+                            </div>
                         </div>
                     </div>    
                 </div>

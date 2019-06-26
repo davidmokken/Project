@@ -2,24 +2,13 @@
  * @license Open source under BSD 2-clause (http://choosealicense.com/licenses/bsd-2-clause/)
  * Copyright (c) 2015, Curtis Bratton
  * All rights reserved.
- */
-
-// Consant variables
-// const width_svg_fill = "97%";
-// const height_svg_fill = 200;
-
-
-// var svg_fill = d3.select("#fillgauge")
-//                 .append("svg")
-//                 .attr("width", width_svg_fill)
-//                 .attr("height", height_svg_fill);
-                
+ */            
 
 
 var defaultConfig = {
     // Values
-    minValue: 0, // The gauge minimum value.
-    maxValue: 10, // The gauge maximum value.
+    minValue: 0.0, // The gauge minimum value.
+    maxValue: 10.0, // The gauge maximum value.
 
     // Styles
     circleThickness: 0.05, // The outer circle thickness as a percentage of it's radius.
@@ -61,11 +50,7 @@ var defaultConfig = {
 
 
 d3.liquidfillgauge = function(g, value, settings) {
-// function updateFill(g, value, settings) {
-    // console.log(g) 
-    
-    // var fill = svg_fill.d3.select()
-    
+  
     // // Handle configuration
     var config = d3.map(defaultConfig);
 
@@ -203,7 +188,6 @@ d3.liquidfillgauge = function(g, value, settings) {
 
         var gaugeGroupDefs = gaugeGroup.append("defs");
 
-        // var clipId = idGenerator("clipWave");
         var clipId = "grade"
  
         var waveGroup = gaugeGroupDefs
@@ -223,9 +207,8 @@ d3.liquidfillgauge = function(g, value, settings) {
 
         if (config.get("fillWithGradient")) {
             var points = config.get("gradientPoints");
-            // var gradientId = idGenerator("linearGradient")0
             var gradientId = 0
-            console.log(gradientId)
+
             var grad = gaugeGroupDefs.append("linearGradient")
                 .attr("id", gradientId)
                 .attr("x1", points[0])
@@ -271,7 +254,6 @@ d3.liquidfillgauge = function(g, value, settings) {
 
         var transition = function(from, to, riseWave, animateText) {
             // Update texts and animate
-            console.log("kaas")
             if (animateText) {
                 var textTween = function() {
                     var that = d3.select(this);
@@ -294,7 +276,6 @@ d3.liquidfillgauge = function(g, value, settings) {
             // Update the wave
             toPercent = Math.max(config.get("minValue"), Math.min(config.get("maxValue"), to)) / config.get("maxValue");
             fromPercent = Math.max(config.get("minValue"), Math.min(config.get("maxValue"), from)) / config.get("maxValue");
-            console.log(waveGroup)
             if (riseWave) {
                 waveGroup.attr('transform', 'translate(' + waveGroupXPosition + ',' + waveRiseScale(fromPercent) + ')')
                     .transition()
@@ -313,15 +294,9 @@ d3.liquidfillgauge = function(g, value, settings) {
             config.get("valueCountUp") && config.get("valueCountUpAtStart")
         );
 
-        // console.log(textStartValue)
-        // console.log(textFinalValue)
         // Event to update the value
         gauge.on("valueChanged", function(newValue) {
             transition(value, newValue, config.get("waveRise"), config.get("valueCountUp"));
-            console.log(value)
-                console.log(newValue)
-                console.log(config.get("waveRise"))
-                console.log(config.get("valueCountUp"))
             value = newValue;
         });
 

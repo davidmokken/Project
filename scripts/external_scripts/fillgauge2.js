@@ -4,18 +4,6 @@
  * All rights reserved.
  */
 
-// Consant variables
-// const width_svg_fill = "97%";
-// const height_svg_fill = 200;
-
-
-// var svg_fill2 = d3.select("#fillgauge2")
-//                 .append("svg")
-//                 .attr("width", width_svg_fill)
-//                 .attr("height", height_svg_fill);
-                
-
-
 var defaultConfig2 = {
     // Values
     minValue: 0, // The gauge minimum value.
@@ -61,11 +49,7 @@ var defaultConfig2 = {
 
 
 d3.liquidfillgauge2 = function(g, value, settings) {
-// function updateFill(g, value, settings) {
-    // console.log(g) 
-    
-    // var fill = svg_fill.d3.select()
-    
+
     // // Handle configuration
     var config = d3.map(defaultConfig2);
 
@@ -203,8 +187,7 @@ d3.liquidfillgauge2 = function(g, value, settings) {
 
         var gaugeGroupDefs = gaugeGroup.append("defs");
 
-        // var clipId = idGenerator("clipWave");
-        var clipId = 0
+        var clipId = "grade2"
  
         var waveGroup = gaugeGroupDefs
             .append("clipPath")
@@ -223,9 +206,7 @@ d3.liquidfillgauge2 = function(g, value, settings) {
 
         if (config.get("fillWithGradient")) {
             var points = config.get("gradientPoints");
-            // var gradientId = idGenerator("linearGradient")0
             var gradientId = 0
-            console.log(gradientId)
             var grad = gaugeGroupDefs.append("linearGradient")
                 .attr("id", gradientId)
                 .attr("x1", points[0])
@@ -330,5 +311,3 @@ d3.liquidfillgauge2 = function(g, value, settings) {
         });
     });
 };
-
-// svg_fill.call(d3.liquidfillgauge, 7.6);
