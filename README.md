@@ -7,6 +7,8 @@
 ##### ***Student number***: 10770798
 
 ---
+Rest of readme will be rewritten tomorrow.
+The assignment can be accessed from [this](https://davidmokken.github.io/Project/) page! Enjoy!
 
 ***__Goal of the project__***
 ---
