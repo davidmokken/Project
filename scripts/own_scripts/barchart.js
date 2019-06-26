@@ -139,7 +139,7 @@ function updateBar(data, radio){
     for (key in used_data){
         data_list.push({name: key, value: used_data[key]})
     };
-    console.log(data_list)
+
     // Scales the ranges of the data and calls the axis
     xScale.domain(Object.keys(used_data))
 

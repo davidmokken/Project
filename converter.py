@@ -145,10 +145,10 @@ def df_to_nested_dict(df, name):
     """"
     Creates a nested dict from the multi-index dataframe and turn it into a json file
     """
-    # 
+    # Creates a nested dict from the multi-index dataframe 
     nested_dict = df.groupby(level=0).apply(lambda df: df.xs(df.name).to_dict(orient='index')).to_dict()
-    # pprint(nested_dict)
 
+    # Safes the nested dict in a json file
     with open ("data/" + name + ".json", "w") as infile:
         json.dump(nested_dict, infile)
   

@@ -90,7 +90,6 @@ function ready(error, data, immigrants, safe, crime) {
       radio = getRadio()
       updateBar(immigrants[year][name], radio)
       updateLine(crime[name], name)
-      console.log(safe[year][name]["Grade for safety (neighbourhood)"])
       document.getElementById('label').innerHTML = name
       gaugeset();
     })
@@ -130,7 +129,6 @@ var clickEventMap = function() {
 //to show information about the Netherlands as a whole
 var clickNed = function(){
   $("#nedbut").on("click", function() {
-    console.log("LIEF")
     name = 'Nederland'
     radio = getRadio()
     updateBar((immigrants[year][name]), radio)
