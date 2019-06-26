@@ -183,4 +183,8 @@ stroke: steelblue;
   color: white;
 }
 
+.legendThreshold {
+  font-size: 12px;
+  font-family: sans-serif;
+}
 

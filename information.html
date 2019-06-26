@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en">
+    <head>
+        <title>Information</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <script type="text/javascript" src="scripts/external_scripts/d3/d3.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="icon" href="images/icon.png" type="images/gif" sizes="16x16">
+    </head>
+
+    <header>
+        <!--Navigation -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="index.html"><img src="images/david-mich.jpg" height="50"></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="index.html">Home</a>
+                    <a class="nav-item nav-link" href="about.html">Case</a>
+                    <a class="nav-item nav-link" href="visualisations.html">Visualisations</a>
+                    <a class="nav-item nav-link active" href="information.html">Information<span class="sr-only">(current)</span></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <body style="font-family: goudy old style">
+        <!-- Page Content -->
+        <div class="hero-image" style="background-image: url(/images/refugees.jpg)">
+            <div class="hero-text">
+                <h1 style="font-size:50px; color:white">Information Visualisations</h1>
+                <a class="btn btn-outline-light" href="visualisations.html">Visualisations</a>
+            </div>
+        </div>
+
+        <div class="ct" style="padding: 35px">
+            <div class="container" style="margin: 80px">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <figure>
+                            <img src="images/mapnl.jpg" style="width: 75%; object-fit: cover">
+                            <figcaption>Fig. Map of the Netherlands</figcaption>
+                        </figure>          
+                    </div>
+                    <div class="col-lg-6" style="text-align: left !important">
+                        <h3>Map of the Netherlands</h3>
+                        <p>
+                            Main Function: Shows the total amount of immigrants.
+                            <br>
+                            Dropdown: A dropdown to select the different years.
+                            The dropdown also changes the barchart and the fillgauges.
+                            <br>
+                            Hoover function: Shows the amount of total people with immigrant background. 
+                            <br>
+                            Color scale: The higher the amount the more blue the province gets.
+                            <br>
+                            Once clicked on a province the barchart, linechart and fillgauges change.
+                            <br>
+                            Dataset that was used can be found
+                            <a href="https://opendata.cbs.nl/statline/#/CBS/nl/dataset/70072ned/table?ts=1558635886803">here.</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6" style="text-align: left !important">
+                        <h3>Barchart immigrant descents</h3>
+                        <p>
+                            Main Function: Shows the distribution of the different immigrant descents.
+                            <br>
+                            Radio button: Changes the barchart to a total amount or to relative distribution.
+                            <br>
+                            Total Amount: Western shows amount of people with Western immigrant descent.
+                            <br>
+                            The rest speaks for itself
+                            <br>
+                            Color scale: The higher the amount, the lighter the red.
+                            <br>
+                            Dataset that was used can be found 
+                            <a href="https://opendata.cbs.nl/statline/#/CBS/nl/dataset/70072ned/table?ts=1558635886803">here.</a>
+                            </p>
+                        
+                        </div>
+                                     
+                    <div class="col-lg-6" style="margin-top: 20px">
+                    <figure>
+                        <img src="images/barchart.jpg" style="width: 75%; object-fit: cover">
+                        <figcaption>Fig. Barchart of distribution of background</figcaption>
+                    </figure>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <figure>
+                            <img src="images/fillgauge.jpg" style="width: 75%; object-fit: cover">
+                            <figcaption>Fig. Fillgauges</figcaption>
+                        </figure>
+                                   
+                    </div>
+                    <div class="col-lg-6" style="text-align: left !important">
+                        <h3>Fillgauges that show data concerning safety feeling</h3>
+                        <p>
+                            Main Function: Several percentages and a grade concerning safety feeling.
+                            <br>
+                            All Fillgauges react to the dropdown and click function in the map.
+                            <br>
+                            Grade for safety in neighbourhood: Average grade given for the safety in a neighbourhood.
+                            <br>
+                            Crime has increased in the neighbourhood: Percentage of people who feel that crime has increased in the last year in their neighbourhood.
+                            <br>
+                            Feels unsafe: Percentage of people who feel unsafe in general.
+                            <br>
+                            Belief there is crime: Percentage of people who belief there is a lot of crime in the neighbourhood.
+                            <br>
+                            Dataset that was used can be found 
+                            <a href="https://opendata.cbs.nl/statline/#/CBS/nl/dataset/81877NED/table?ts=1558540316272">here.</a>
+                            </p>
+                    </div>
+                </div>
+
+                
+                <div class="row">
+                    <div class="col-lg-6" style="text-align: left !important">
+                        <h3>Registered Amount of Crimes over 5 years</h3>
+                        <p>
+                            Main Function: Shows amount of registered crimes over 5 years in a province.
+                            <br>
+                            Several different crimes were picked which were also hidden in the report mentionned in the case.
+                            <br>
+                            The linechart reacts to the province chosen/clicked in the map.
+                            <br>
+                            Dataset that was used can be found 
+                            <a href="https://data.politie.nl/#/Politie/nl/dataset/47013NED/table?ts=1558538256717">here.</a>
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                            <figure>
+                                <img src="images/linechart.jpg" style="width: 75%; object-fit: cover">
+                                <figcaption>Fig. Linechart of Crime</figcaption>
+                            </figure>
+                                       
+                        </div>
+                </div>
+            </div>
+        </div>
+            
+        
+    </body>
+
+    <footer class="py-5 bg-dark page-foot" style="color: white">
+        <div class="container">
+            <div class="text-center" style="font-size: 13px">
+                <p>David Robert Jan Mokken</p>
+                <p>Prinseneiland 50-I 1013 LR Amsterdam</p>
+                <p>+31618828637 | davidmokken@hotmail.com</p>
+                <p>Date of birth: September 18th 1994, Amsterdam</p>
+                <p>&copy; davidmokken</p>
+            </div>
+        </div>
+    </footer>
+
+</html>

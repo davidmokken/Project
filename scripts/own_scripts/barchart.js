@@ -17,7 +17,7 @@ var svg_bar = d3.select("#bar")
 const tip_bar = d3.tip()
                 .attr('class', 'd3-tip')
                 .offset([-10, 0])
-                .html(d => `<strong>Background: </strong><span class='details'>${d.data.key}<br></span><strong>Amount: </strong><span class='details'>${format(d.value)}%</span>`);
+                .html(d => `<strong>Background: </strong><span class='details'>${d.name}<br></span><strong>Amount: </strong><span class='details'>${d.value}</span>`);
           
 svg_bar.call(tip_bar);
 
@@ -139,7 +139,7 @@ function updateBar(data, radio){
     for (key in used_data){
         data_list.push({name: key, value: used_data[key]})
     };
-
+    console.log(data_list)
     // Scales the ranges of the data and calls the axis
     xScale.domain(Object.keys(used_data))
 
@@ -152,19 +152,29 @@ function updateBar(data, radio){
     svg_bar.selectAll(".y-axis").transition().duration(speed)
 			.call(yAxis);
     
-        console.log(data_list)
     // Deletes previously used (before updating) bars
     var bar = svg_bar.selectAll(".bar")
                     .data(data_list)    
 
     bar.exit().remove();
 
-    // Draws the bars with the acquired data
+    // Draws the bars with the acquired data and creates the hoover function
     bar.enter()
         .append("rect")
+        .on('mouseover',function(d){
+            tip_bar.show(d);
+            d3.select(this)
+              .style('opacity', 1)
+              .style('stroke-width', 3);
+        })
+        .on('mouseout', function(d){
+            tip_bar.hide(d);
+            d3.select(this)
+              .style('opacity', 0.8)
+              .style('stroke-width',0.3);
+        })
         .attr("class", "bar")
         .attr("fill", function(d) {
-            console.log(d)
             return "rgb(" + (height_bar - yScale(d['value'])) + ", 0, 0)";
         })
         .attr("width", width_bar / data_list.length - bar_spacing)
@@ -183,18 +193,6 @@ function updateBar(data, radio){
         .attr('id', function(d){
             return d['name']
         });
-        // .on('mouseover',function(d){
-        //     tip_bar.show(d);
-        //     d3.select(this)
-        //       .style('opacity', 1)
-        //       .style('stroke-width', 3);
-        // })
-        // .on('mouseout', function(d){
-        //     tip_bar.hide(d);
-        //     d3.select(this)
-        //       .style('opacity', 0.8)
-        //       .style('stroke-width',0.3);
-        // });
         
 
 

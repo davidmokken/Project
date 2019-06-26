@@ -247,20 +247,4 @@ function updateLine(data, province) {
       
 }
 
-
-
-
- 
-// // Set tooltips
-// const tip_line = d3.tip()
-//   .attr('class', 'd3-tip')
-//   .offset([-10, 0])
-//   .html(d => `<strong>Religion: </strong><span class='details'>${d.data.key}<br></span><strong>Percentage: </strong><span class='details'>${format(d.value)}%</span>`);
-
-// svg_line.call(tip_line);
-
-    // // Sets the color scale
-    // const color = d3.scaleOrdinal()
-    //                 .domain(['Athiest', 'Dutch Reformed', 'Islam', 'Other', 'Protestant', 'Reformed', 'Roman Catholic'])
-    //                 .range(["#66c2a5","#fc8d62","#8da0cb","#e78ac3","#a6d854","#ffd92f", "#0f60e2"]);
   
