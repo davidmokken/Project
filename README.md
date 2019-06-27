@@ -50,28 +50,47 @@ The last page shows information and pictures about the different visualisations.
 
 ---
 ***__Sources__***
-**Data Sources**
-
-
-
-
-__Prerequisites__
 ---
-
-*Data sources*
-- __[StatLine](https://opendata.cbs.nl/statline/#/CBS/nl/dataset/82249NED/table?ts=1558540015099)__ - Social contacts and participation in Society.
-- __[StatLine](https://opendata.cbs.nl/statline/#/CBS/nl/dataset/83102NED/table?ts=1558540301270)__ - Asylum seekers in the Netherlands 2013-2018
+**Data Sources**
+The data used came from the CSB and Politie databases. 
+The datasets used were:
 - __[StatLine](https://opendata.cbs.nl/statline/#/CBS/nl/dataset/81877NED/table?ts=1558540316272)__- Feeling of (un)safety per region.
 - __[Politie StatLine](https://data.politie.nl/#/Politie/nl/dataset/47013NED/table?ts=1558538256717)__- Crime in the Netherlands.
-- __[StatLine](https://opendata.cbs.nl/statline/#/CBS/nl/dataset/81947NED/table?ts=1558540317309)__ - Suspects based on migration background.
 - __[StatLine](https://opendata.cbs.nl/statline/#/CBS/nl/dataset/70072ned/table?ts=1558635886803)__ - Migration data, The Netherlands.
 
-*External components*
-- D3-tip
-- Mapping
+**Code Sources**
+Several materials used in this projects have their own licenses.
+* Bootstrap elements:
+    * Navigation bar: [click here](https://getbootstrap.com/docs/4.3/components/navs/#regarding-        accessibility)
+    * Hero Image: [click here](https://www.w3schools.com/howto/howto_css_hero_image.asp)
+    * Grid: [click here](https://www.w3schools.com/bootstrap/bootstrap_grid_basic.asp)
+    
+* Map of Europe:
+    * TopoJSON map (paths and coördinates): [click here](http://bl.ocks.org/denisemauldin/cb870e6f439864a5ae74d4fc561ac46f)
+    * The idea for a color coded map: [click here](http://bl.ocks.org/denisemauldin/cb870e6f439864a5ae74d4fc561ac46f)
+    * Babel (used for the map function): [click here]https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.10.3/babel.min.js'>
 
-*Related Visualizations*
-- 
-*Hardest part*
-- Linking the data map, in my case the Netherlands, to different pages for the provinces.
-- Creating a format will be essential. If I correctly format the page, it will be much easier to link all the different data to the different pages
+* Bar chart:
+    * Based on: [click here](https://datavizcatalogue.com/methods/bar_chart.html)
+    * 
+
+**API's and D3 Plugins**  
+* [D3](https://d3js.org)
+* [D3 tip library](https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js)
+* [jQuery](https://jquery.com)
+* [Bootstrap](https://getbootstrap.com)
+* [TopoJSON](https://github.com/topojson/topojson)
+* [DataMaps](https://datamaps.github.io/)
+
+**Images** 
+* Homepage image: [click here](https://www.chathamhouse.org/expert/comment/syrian-refugees-are-not-security-threat-they-are-feared-be)
+* Case Description image: [click here](https://www.chathamhouse.org/expert/comment/syrian-refugees-are-not-security-threat-they-are-feared-be)
+* State Secretary Harbers image: [click here](https://www.chathamhouse.org/expert/comment/syrian-refugees-are-not-security-threat-they-are-feared-be)
+* Visualisations image: [click here](https://www.chathamhouse.org/expert/comment/syrian-refugees-are-not-security-threat-they-are-feared-be)
+* Information image: [click here](https://www.chathamhouse.org/expert/comment/syrian-refugees-are-not-security-threat-they-are-feared-be)
+
+
+<p align="center"><i>
+This project is licensed under the terms of the MIT license.</br>
+davidmokken 2019
+</i></p>
