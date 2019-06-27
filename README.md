@@ -61,14 +61,14 @@ The datasets used were:
 **Code Sources**
 Several materials used in this projects have their own licenses.
 * Bootstrap elements:
-    * Navigation bar: [click here](https://getbootstrap.com/docs/4.3/components/navs/#regarding-        accessibility)
+    * Navigation bar: [click here](https://getbootstrap.com/docs/4.3/components/navs/#regarding-accessibility)
     * Hero Image: [click here](https://www.w3schools.com/howto/howto_css_hero_image.asp)
     * Grid: [click here](https://www.w3schools.com/bootstrap/bootstrap_grid_basic.asp)
     
 * Map of Europe:
     * TopoJSON map (paths and coördinates): [click here](http://bl.ocks.org/denisemauldin/cb870e6f439864a5ae74d4fc561ac46f)
     * The idea for a color coded map: [click here](http://bl.ocks.org/denisemauldin/cb870e6f439864a5ae74d4fc561ac46f)
-    * Babel (used for the map function): [click here]https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.10.3/babel.min.js'>
+    * Babel (used for the map function): [click here](https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.10.3/babel.min.js')
 
 * Bar chart:
     * Based on: [click here](https://datavizcatalogue.com/methods/bar_chart.html)
