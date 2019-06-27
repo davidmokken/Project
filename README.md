@@ -48,71 +48,12 @@ The bottom right shows a linechart that shows amount of registered crimes over 5
 The last page shows information and pictures about the different visualisations. It describes the visualisations and their provides the datasets that contains the data used in this project.
 ![](images/information.jpg)
 
-*Sketch*
-
-*Main Features*
-1. When mouse moved over, the amount of data is shown (at start the amount of immigrants)
-1. When clicked on a province, certain charts are shown (depends on dataset currently viewing which data in charts are shown)
-1. Dropdown menu to select year
-1. Dropdown menu to select different datasets
-1. Possibility/button to show line chart (instead of the map) to display total numbers of migrants in the Netherlands over the years.
-
-
-*Datasets used for main map of the netherlands:*
-- Immigrants per province (dropdown)
-- Safety feeling per province (dropdown)
-- Amount of crimes
-
-*Minimum Viable Product*
-1. Link/Button to crime in the Netherlands page and when clicked on province when total crime amount is showing also redirect to crime page
-
 ---
-
-**When clicked on a province**
-
-All provinces of The Netherlands will have seperate info
-
-*Main Features*
-1. Barchart to display all the different kinds of migration backgrounds (migration dataset)
-1. Pie chart that will display relative percentage of migrants that have one parent born outside of the Netherlands (migration dataset)
-1. Bar chart to show different kind of crimes (crime dataset)
-1. Line Chart to show decrease in suspects with lines being seperate background (suspect dataset used for crime dataset)
-1. Pie chart to show percentage of background of suspects (suspect dataset used for crime dataset)
-1. Liquid fill chart to show percentage of people thinking criminality has increased (safety dataset)
-1. Liquid fill chart to show percentage komt wel eens voor "Respectloos gedrag door onbekenden op straat" (safety dataset)
+***__Sources__***
+**Data Sources**
 
 
-*Datasets used:*
-- Immigrants per province (dropdown)
-- Safety feeling per province (dropdown)
-- Amount of crimes (dropdown)
-- Suspect dataset
 
-*Minimum Viable Product*
-1. Large number to show grade for safety (safety dataset)
-1. Large number to show amount of crimes (crime dataset)
-
----
-
-**Page for Asylum Seekers and Volunteerwork (told that I wanted to do too much so this will be extra if there is time left)**
-
-Page containing Asylum Seekers and Volunteerwork by Migrants in The Netherlands
-
-*Main Features*
-1. Pie Chart to show background percentage of the people who do informal work
-1. Pie Chart of percentage of people doing volunteerwork
-1. Barchart of what the volunteerwork is
-1. Linechart of Asylum seekers per year with people from several countries as lines
-
-*Datasets used:*
-- Social contacts and participation
-- Asylum seekers in the Netherlands 2013-2018
-
-*Minimum Viable Product*
-1. Color scale to display difference
-2. English page
-
----
 
 __Prerequisites__
 ---
