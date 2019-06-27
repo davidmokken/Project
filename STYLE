@@ -1,0 +1,12 @@
+In all code: Use tab, NEVER spaces
+Javascript, uses _ in names.
+In HTML, uses _ in names.
+In Python, uses _ in names.
+Only open lines after different functions. Otherwise no blank lines.
+Keep lines short and otherwise use enter to keep in tact.
+In the repository: use a folder for all the data, a folder for all the scripts and a folder for the images. 
+HTML and .md-files will directly be placed in the repository without subfolder.
+In the folder for scripts, make a distinction external and own files.
+Use only one-line comments in the script itself.
+Datamap is the main visualisation, others are connected to the datamap scripts.
+Do everything in English.
