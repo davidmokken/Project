@@ -7,8 +7,8 @@
 ##### ***Student number***: 10770798
 
 ---
-### [GitHub Pages]((https://davidmokken.github.io/Project/index.html))  
-### [Product Demonstration Video]
+### [GitHub Pages](https://davidmokken.github.io/Project/index.html) 
+### [Product Demonstration Video Needs to be included]
 
 ***__Problem Statement and goal of the project__***
 ---
@@ -72,15 +72,21 @@ Several materials used in this projects have their own licenses.
 
 * Bar chart:
     * Based on: [click here](https://datavizcatalogue.com/methods/bar_chart.html)
-    * 
+    
+* Liquid Fillgauges:
+    * Based on: [click here](http://bl.ocks.org/brattonc/5e5ce9beee483220e2f6)
+    
+* Linechart chart:
+    * Based on: [click here](https://datavizcatalogue.com/methods/bar_chart.html)
+   
 
 **API's and D3 Plugins**  
 * [D3](https://d3js.org)
 * [D3 tip library](https://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js)
-* [jQuery](https://jquery.com)
 * [Bootstrap](https://getbootstrap.com)
 * [TopoJSON](https://github.com/topojson/topojson)
 * [DataMaps](https://datamaps.github.io/)
+* [Babel](https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.10.3/babel.min.js)
 
 **Images** 
 * Homepage image: [click here](https://www.volkskrant.nl/nieuws-achtergrond/voor-migranten-is-spanje-de-nieuwe-toegangspoort-tot-europa~be15c9a1/#&gid=1&pid=1)
@@ -89,7 +95,6 @@ Several materials used in this projects have their own licenses.
 * State Secretary Harbers image: [click here](https://nos.nl/artikel/2284928-ophef-over-onduidelijke-misdaadcijfers-asielzoekers-harbers-geen-opzet.html)
 * Visualisations image: [click here](https://s3-eu-west-1.amazonaws.com/investico/app/uploads/2019/03/12141935/Artikel-20-header-1050x557.png)
 * Information image: [click here](https://www.unrefugees.org/emergencies/iraq/)
-
 
 <p align="center"><i>
 This project is licensed under the terms of the MIT license.</br>
