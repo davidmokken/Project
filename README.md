@@ -7,8 +7,8 @@
 ##### ***Student number***: 10770798
 
 ---
-## [GitHub Pages]((https://davidmokken.github.io/Project/index.html))  
-## [Product Demonstration Video]
+### [GitHub Pages]((https://davidmokken.github.io/Project/index.html))  
+### [Product Demonstration Video]
 
 ***__Problem Statement and goal of the project__***
 ---
@@ -19,6 +19,11 @@ This in combination with lack of knowledge of the actual numbers of crime, asylu
 The goal of this products is to provide proper and easy to understand visualisations about crimerates, migrants and ethnicity which hopefully might change people's perceptions about migrants. We all might just get along after all.
 
 ---
+
+***__Website Walktrough__***
+---
+**Homepage**
+The homepage provides a short discription of the minor and final project.
 
 **Map of the Netherlands**
 
