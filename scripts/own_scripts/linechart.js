@@ -141,7 +141,7 @@ var legend = svg_line.append("g")
         return "translate(0," + i * 20 + ")"; });
 
 legend.append("rect")
-    .attr("x", width - 17)
+    .attr("x", 533)
     .attr("width", 15)
     .attr("height", 15)
     .attr("fill", z)
@@ -150,7 +150,7 @@ legend.append("rect")
     // .on("click",function(d) { update(d) });
 
 legend.append("text")
-    .attr("x", width - 24)
+    .attr("x", 526)
     .attr("y", 9.5)
     .attr("dy", "0.32em")
     .text(function(d) { return d; });
