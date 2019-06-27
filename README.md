@@ -8,7 +8,7 @@
 
 ---
 ### [GitHub Pages](https://davidmokken.github.io/Project/index.html) 
-### [Product Demonstration Video Needs to be included]
+### [Product Demonstration Video](https://www.youtube.com/watch?v=PXs4djrOqao&feature=youtu.be)
 
 ***__Problem Statement and goal of the project__***
 ---
