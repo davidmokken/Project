@@ -8,7 +8,7 @@
 
 ---
 Rest of readme will be rewritten tomorrow.
-The assignment can be accessed from [this](https://davidmokken.github.io/Project/) page! Enjoy!
+The assignment can be accessed from [this](https://davidmokken.github.io/Project/index.html) page! Enjoy!
 
 ***__Goal of the project__***
 ---
