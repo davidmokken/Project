@@ -83,11 +83,12 @@ Several materials used in this projects have their own licenses.
 * [DataMaps](https://datamaps.github.io/)
 
 **Images** 
-* Homepage image: [click here](https://www.chathamhouse.org/expert/comment/syrian-refugees-are-not-security-threat-they-are-feared-be)
-* Case Description image: [click here](https://www.chathamhouse.org/expert/comment/syrian-refugees-are-not-security-threat-they-are-feared-be)
-* State Secretary Harbers image: [click here](https://www.chathamhouse.org/expert/comment/syrian-refugees-are-not-security-threat-they-are-feared-be)
-* Visualisations image: [click here](https://www.chathamhouse.org/expert/comment/syrian-refugees-are-not-security-threat-they-are-feared-be)
-* Information image: [click here](https://www.chathamhouse.org/expert/comment/syrian-refugees-are-not-security-threat-they-are-feared-be)
+* Homepage image: [click here](https://www.volkskrant.nl/nieuws-achtergrond/voor-migranten-is-spanje-de-nieuwe-toegangspoort-tot-europa~be15c9a1/#&gid=1&pid=1)
+* MPROG image: [click here](https://pbs.twimg.com/profile_images/2220153576/minor-avatar.png)
+* Case Description image: [click here](https://www.volkskrant.nl/nieuws-achtergrond/het-is-simpel-zegt-het-cpb-geef-een-asielzoeker-een-huis-daar-waar-werk-is~be66e4b9/#&gid=1&pid=1)
+* State Secretary Harbers image: [click here](https://nos.nl/artikel/2284928-ophef-over-onduidelijke-misdaadcijfers-asielzoekers-harbers-geen-opzet.html)
+* Visualisations image: [click here](https://s3-eu-west-1.amazonaws.com/investico/app/uploads/2019/03/12141935/Artikel-20-header-1050x557.png)
+* Information image: [click here](https://www.unrefugees.org/emergencies/iraq/)
 
 
 <p align="center"><i>
