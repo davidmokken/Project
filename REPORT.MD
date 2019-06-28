@@ -16,15 +16,21 @@ This application was created with to provide proper and easy to understand visua
 **HTML, Bootstrap & CSS**
 The website in its entirety consists out of 4 HTML-files. One for each page of the website; the homepage (index.html), the case description page (about.html), the visualisations page (visualizations.html) and lastly, the additional information page (information.html). 
 In these files a lot of Bootstrap and CSS is used for the visual aspect of the pages. The pages are linked to each other with the help of a navigation bar or links in the pages. The hero-images provide a nice visual aspect that grabs the attention of the reader. Also a footer was included to provide my contact info to possible readers/users. 
-There are certain elements such as the dropdown, radio button, and label that actually interactive with the data and therefore change by user action.
+There are certain elements such as the dropdown, radio button, and label that actually interactive with the data and therefore are changeble by user action. Apart from a seperate style file, I have chosen to sometimes style in the html tags as it gave me a clearer and better insight in all the different several grid objects in terms of spacing and color.
 
 **Python**
 I used python and pandas to convert my csv data into a json file. This actually took some time as there were certain steps that needed to be taken before I could succesfully converted into a json. I had chosen for a multi-index dataframework in pandas in which I could more easily change the names of the columns and have more clear vision over my data. However, this could not be converted directly into a nested json. Therefore, I had to create a 2 layered nested dict from the multi-index dataframework. After this step I could succesfully push the dict into a nested json file.
 
 **Javascript**
-Clearly describe the technical design: how is the functionality implemented in your code? This should be like your DESIGN.md but updated to reflect the final application. First, give a high level overview, which helps us navigate and understand the total of your code (which components are there?). Second, go into detail, and describe the modules/classes (apps) files/functions (data) and how they relate.
+In this repository I have made a distinction between personally created JavaScript files and externally (and slightly modified) Javascript files. The external JavaScript files are the D3 library files and the Fillgauges. The Fillgauge files are complicated files and are therefore slightly modified to be properly used. I, myself, wrote scripts for the barchart, map function and linechart.
 
-**Javascript**
+* datamap.js: This script loads all the converetd datafiles and creates a datamap using a TopoJSON-file. It holds a hoover function for the datamap and is color scaled. It connects all the other visualisation by linking the seperate datafiles to a on-click function for provinces and value change functions for the radio button and dropdown. Furthermore, a function is created for the update when the user clicks on the Netherlands button. A start function is also created that shows the data for the Netherlands in 2017 when starting the program. 
+
+* barchart.js: The top right shows a barchart which shows the distribution of the different immigrants descents per province. The radio button changes the barchart from a total amount of distribution to a relative distribution. There is a Netherlands button that once clicked changes all the chart to show information about the Netherlands as a whole. A hoover function is installed to show the precise amount in the barchart. The bars are color coded to the amount of percent with the darker color showing the lesser amount. 
+  
+* linechart.js: The bottom right shows a linechart that shows amount of registered crimes over 5 years in a given province. Several different crimes were picked that were hidden in the report that was mentionned in the case. The linechart reacts to the province chosen/clicked in the map.
+
+**Data**
 
 ***__Challenges__***
 ---
