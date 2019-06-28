@@ -9,7 +9,31 @@
 ---
 ![Preview](images/website.JPG)
 
+
+***__Problem Statement__***
+---
+We live in times where people are afraid, especially of people who are different or come from another place than ours. This in combination with lack of knowledge of the actual numbers of crime, asylum seekers and migrants have lead to forgone conclusions and fear/anger in many people towards "foreigners". 
+
+**Solution**
 This application was created with to provide proper and easy to understand visualisations of data concerning crimerates, migrants and ethnicity which hopefully might change people's perceptions about migrants. A more detailed description of the case is provided on the site or in the README.md.
+
+***__High Level Overview__***
+---
+**Dashboard Components**
+The visualization consists of the following components:
+
+* Every html webpage contains a fixed navbar at the top with 5 navigational
+links, the first is a picture of a David that also links to the homepage. A footer at the bottom and a title with favicon symbol of a scale. 
+
+* Every page contains a large image to attract attention the my case. Every image contains a title and a link button to another site.
+
+* Four D3 visualizations:
+All (interactive) visualizations are included with an on click function, colors
+representing the values (except line chart) and a tooltip.
+  - Datamap
+  - Line chart (includes button to start animation of drawing line chart)
+  - Horizontal bar chart
+  - Fillgauge
 
 ***__Technical Design__***
 ---
