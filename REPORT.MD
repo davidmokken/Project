@@ -42,16 +42,18 @@ In these files a lot of Bootstrap and CSS is used for the visual aspect of the p
 There are certain elements such as the dropdown, radio button, and label that actually interactive with the data and therefore are changeble by user action. Apart from a seperate style file, I have chosen to sometimes style in the html tags as it gave me a clearer and better insight in all the different several grid objects in terms of spacing and color.
 
 **Python**
-I used python and pandas to convert my csv data into a json file. This actually took some time as there were certain steps that needed to be taken before I could succesfully converted into a json. I had chosen for a multi-index dataframework in pandas in which I could more easily change the names of the columns and have more clear vision over my data. However, this could not be converted directly into a nested json. Therefore, I had to create a 2 layered nested dict from the multi-index dataframework. After this step I could succesfully push the dict into a nested json file.
+I used python and pandas to convert my csv data into a json file. This actually took some time as there were certain steps that needed to be taken before I could succesfully converted into a json. I had chosen for a multi-index dataframework in pandas in which I could more easily change the names of the columns and have more clear vision over my data. However, this could not be converted directly into a nested json. Therefore, I had to create a 2 level layered nested dict from the multi-index dataframework. After this step I could succesfully push the dict into a nested json file.
 
 **Javascript**
 In this repository I have made a distinction between personally created JavaScript files and externally (and slightly modified) Javascript files. The external JavaScript files are the D3 library files and the Fillgauges. The Fillgauge files are complicated files and are therefore slightly modified to be properly used. I, myself, wrote scripts for the barchart, map function and linechart.
 
 * datamap.js: This script loads all the converetd datafiles and creates a datamap using a TopoJSON-file. It holds a hoover function for the datamap and is color scaled. It connects all the other visualisation by linking the seperate datafiles to a on-click function for provinces and value change functions for the radio button and dropdown. Furthermore, a function is created for the update when the user clicks on the Netherlands button. A start function is also created that shows the data for the Netherlands in 2017 when starting the program. 
 
-* barchart.js: The top right shows a barchart which shows the distribution of the different immigrants descents per province. The radio button changes the barchart from a total amount of distribution to a relative distribution. There is a Netherlands button that once clicked changes all the chart to show information about the Netherlands as a whole. A hoover function is installed to show the precise amount in the barchart. The bars are color coded to the amount of percent with the darker color showing the lesser amount. 
+* barchart.js: In this script the main function is the update function that is called in the datamap script. At the start of the function there are two sub-functions that create hard copies for the respective state of the radiobutton. There is also a tip/hoover function to provide a more detailed view of the data. 
   
-* linechart.js: The bottom right shows a linechart that shows amount of registered crimes over 5 years in a given province. Several different crimes were picked that were hidden in the report that was mentionned in the case. The linechart reacts to the province chosen/clicked in the map.
+* linechart.js: In this script the main function is the update function that is called by the datamap script. It first defines the constant values and appends the svg, color scales and x/y scales. Furthermore, for every picked line a d3.line function is created. Lastly a legend is created from an id_list. The data from the id list is also used to create several paths. In the update funciton the data is slightly transformed to an array so it can used in a line chart. And from that data lines are added to the previously mentionned paths.
+
+* fillgauge.js: The fillgauges scripts are external scripts gained from the d3 library. In every script the basic information have been slighly updated so it can react to the on click function in the datamap and to be different from each other.
 
 **Data**
 The data folder contains 3 csv files and 4 json files. Out of the 4 json file, 3 contain the converted data from the csv. The additional one contains data to create the datamap.
@@ -70,9 +72,27 @@ The data folder contains 3 csv files and 4 json files. Out of the 4 json file, 3
 * [TopoJSON file for creation of datamap](data/ned.json)
    -  TopoJSON datafile containing the necessary data to create a d3 datamap.   
    
-***__Challenges__***
+***__Process and Development__***
 ---
+**Challenges**
+The first big challenges I encoutered was the creation of a multi-index dataframe, as I had not worked with these before. When I finally created one I found out that I was unable to convert it into a json file. Therefore, I had to convert it in a multi nested dict which eventually enabled me to convert the data in a json.<br> 
+The other big challenge was to wirk with the fillgauges. The fillgauges were slighly outdated visualisations which did not contain a version 5 of D3. I had to alter the data for it to be shown on my webpage.<br>
+Lastly, and as expected, a main challenge for me was the linking of the different visualisations. Especially the merge and transition of the linechart and barchart was difficult and took quite some time.
+<br><br>
+The biggest chang
 Clearly describe challenges that your have met during development. Document all important changes that your have made with regard to your design document (from the PROCESS.md). Here, we can see how much you have learned in the past month.
+
+**Acquired Skills**
+  * I learned a lot about formatting and converting data. Especially working with pandas and dicts as I had to take a long route to create the kind of json file I wanted to work with.
+  
+  * KLearned a lot about the interactive elements of d3 visualisations and how they worked. 
+  
+  * Overall, I general improvement in HTML, D3, CSS and mostly in Javascript.
+
+**Comparison to DESIGN.MD**
+* Layout was not included in the Design of the project. Now it included multiple css, html and bootstrap components.
+* Used datasets changed from 4 to 3.
+* Idea for piechart changes to a barchart.
 
 ***__Defence__***
 ---
