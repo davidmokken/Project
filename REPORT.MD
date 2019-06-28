@@ -96,6 +96,5 @@ Clearly describe challenges that your have met during development. Document all 
 
 ***__Defence__***
 ---
-Defend your decisions by writing an argument of a most a single paragraph. Why was it good to do it different than you thought before? Are there trade-offs for your current solution? In an ideal world, given much more time, would you choose another solution?
+I had not included the design of my website as I wanted to pretty up my site when all the visuals were working. At the start of the project I had grand ideads about the project and I wanted to include a lot of visuals, datasets and webpages. Thankfully, Nigel quickly persuaded me to scale it down a lot. The biggest change from my desing is the choice of a linechart over a piechart. I wanted to use the fourth dataset for the piechart but I saw that the data did not link in a correct way with the dataset which in turn meant that a pie chart could not link or interact with other visualisations. I also felt that a piechart would not provide me with enough and significant information for my page. Therefore, I choose a, for me, new and a more precise line chart. If would have had more time I would create a seperate webpage focussing on the crime data in more detail. It would than contain several extra charts and more info. However, with the time I had, I am really proud of my final product and I can proudly show it to friends and family.
 
-Make sure the document is complete and reflects the final state of the application. The document will be an important part of your grade.
