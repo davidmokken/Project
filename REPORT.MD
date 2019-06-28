@@ -78,14 +78,11 @@ The data folder contains 3 csv files and 4 json files. Out of the 4 json file, 3
 The first big challenges I encoutered was the creation of a multi-index dataframe, as I had not worked with these before. When I finally created one I found out that I was unable to convert it into a json file. Therefore, I had to convert it in a multi nested dict which eventually enabled me to convert the data in a json.<br> 
 The other big challenge was to wirk with the fillgauges. The fillgauges were slighly outdated visualisations which did not contain a version 5 of D3. I had to alter the data for it to be shown on my webpage.<br>
 Lastly, and as expected, a main challenge for me was the linking of the different visualisations. Especially the merge and transition of the linechart and barchart was difficult and took quite some time.
-<br><br>
-The biggest chang
-Clearly describe challenges that your have met during development. Document all important changes that your have made with regard to your design document (from the PROCESS.md). Here, we can see how much you have learned in the past month.
 
 **Acquired Skills**
   * I learned a lot about formatting and converting data. Especially working with pandas and dicts as I had to take a long route to create the kind of json file I wanted to work with.
   
-  * KLearned a lot about the interactive elements of d3 visualisations and how they worked. 
+  * I learned a lot about the interactive elements of d3 visualisations and how they worked. 
   
   * Overall, I general improvement in HTML, D3, CSS and mostly in Javascript.
 
