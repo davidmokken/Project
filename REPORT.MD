@@ -28,8 +28,7 @@ links, the first is a picture of a David that also links to the homepage. A foot
 * Every page contains a large image to attract attention the my case. Every image contains a title and a link button to another site.
 
 * Four D3 visualizations:
-All (interactive) visualizations are included with an on click function, colors
-representing the values (except line chart) and a tooltip.
+All visualisations are interactive and linked with each other. Functions differ per visualisation.
   - Datamap
   - Line chart (includes button to start animation of drawing line chart)
   - Horizontal bar chart
@@ -55,7 +54,22 @@ In this repository I have made a distinction between personally created JavaScri
 * linechart.js: The bottom right shows a linechart that shows amount of registered crimes over 5 years in a given province. Several different crimes were picked that were hidden in the report that was mentionned in the case. The linechart reacts to the province chosen/clicked in the map.
 
 **Data**
+The data folder contains 3 csv files and 4 json files. Out of the 4 json file, 3 contain the converted data from the csv. The additional one contains data to create the datamap.
+* [Immigration per Province CSV](data/Immigratie_per_gemeente.csv)
+* [Immigration per Province JSON](data/immi.json)
+   - Datafile containing immigration data per province.
 
+* [Crime per Province CSV](data/Misdrijven_per_gemeente.csv)
+* [Crime per Province JSON](data/crime.json)
+   - Datafile containing crime data per province.
+
+* [Safety feeling per Province CSV](data/veiligheidsbeleving_gemeente.csv.csv)
+* [Safety feeling per Province JSON](data/safe.json)
+   - Datafile containing safety feeling data per province.
+   
+* [TopoJSON file for creation of datamap](data/ned.json)
+   -  TopoJSON datafile containing the necessary data to create a d3 datamap.   
+   
 ***__Challenges__***
 ---
 Clearly describe challenges that your have met during development. Document all important changes that your have made with regard to your design document (from the PROCESS.md). Here, we can see how much you have learned in the past month.
