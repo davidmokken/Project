@@ -7,7 +7,7 @@
 ##### ***Student number***: 10770798
 
 ---
-![](images/website.png)
+![Preview](images/website.JPG)
 
 This application was created with to provide proper and easy to understand visualisations of data concerning crimerates, migrants and ethnicity which hopefully might change people's perceptions about migrants. A more detailed description of the case is provided on the site or in the README.md.
 
